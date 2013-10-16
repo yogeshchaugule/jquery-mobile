@@ -9,7 +9,7 @@
 
 <li data-filtertext=""><a href="pages-single-page/" data-ajax="false">Single page</a></li>
 <li data-filtertext=""><a href="pages-multi-page/" data-ajax="false">Multi-page template</a></li>
-<li data-filtertext=""><a href="page-dialog/" data-ajax="false">Dialog page</a></li>
+<li data-filtertext=""><a href="pages-dialog/" data-ajax="false">Dialog page</a></li>
 
 <li data-filtertext=""><a href="navigation/" data-ajax="false">Navigation</a></li>
 <li data-filtertext=""><a href="navigation-linking-pages/" data-ajax="false">Linking pages</a></li>
@@ -20,8 +20,8 @@
 
 <li data-role="list-divider">Themes</li>
 
-<li data-filtertext=""><a href="themes-default/" data-ajax="false">Default theme</a></li>
-<li data-filtertext=""><a href="themes-classic/" data-ajax="false">Classic theme</a></li>
+<li data-filtertext=""><a href="theme-default/" data-ajax="false">Default theme</a></li>
+<li data-filtertext=""><a href="theme-classic/" data-ajax="false">Classic theme</a></li>
 
 <li data-role="list-divider">Buttons &amp; Icons</li>
 
@@ -54,10 +54,14 @@
 <li data-filtertext=""><a href="loader/" data-ajax="false">Loader</a></li>
 
 <li data-filtertext=""><a href="toolbar/" data-ajax="false">Toolbar</a></li>
+<li data-filtertext=""><a href="toolbar-dynamic/" data-ajax="false">Toolbar: dynamic</a></li>
 <li data-filtertext=""><a href="toolbar-external/" data-ajax="false">Toolbar: external</a></li>
 <li data-filtertext=""><a href="toolbar-fixed/" data-ajax="false">Toolbar: fixed</a></li>
+<li data-filtertext=""><a href="toolbar-fixed-fullscreen/" data-ajax="false">Toolbar: fixed fullscreen</a></li>
 <li data-filtertext=""><a href="toolbar-fixed-external/" data-ajax="false">Toolbar: fixed external</a></li>
-<li data-filtertext=""><a href="toolbar-persistent/" data-ajax="false">Toolbar: persistent</a></li>
+<li data-filtertext=""><a href="toolbar-fixed-persistent/" data-ajax="false">Toolbar: fixed persistent</a></li>
+<li data-filtertext=""><a href="toolbar-fixed-persistent-optimized/" data-ajax="false">Toolbar: fixed persistent AJAX optimized</a></li>
+<li data-filtertext=""><a href="toolbar-fixed-forms/" data-ajax="false">Toolbar: fixed with forms</a></li>
 
 <li data-filtertext=""><a href="navbar/" data-ajax="false">Navbar</a></li>
 
@@ -82,9 +86,11 @@
 <li data-filtertext=""><a href="listview/" data-ajax="false">Listview</a></li>
 <li data-filtertext=""><a href="listview-autocomplete/" data-ajax="false">Listview: autocomplete</a></li>
 <li data-filtertext=""><a href="listview-autocomplete-remote/" data-ajax="false">Listview: autocomplete remote data</a></li>
+<li data-filtertext=""><a href="listview-autodividers-linkbar/" data-ajax="false">Listview: autodividers linkbar</a></li>
 <li data-filtertext=""><a href="listview-autodividers-selector/" data-ajax="false">Listview: autodividers selector</a></li>
+<li data-filtertext=""><a href="listview-collapsible-item-flat/" data-ajax="false">Listview: collapsible list items (flat)</a></li>
+<li data-filtertext=""><a href="listview-collapsible-item-indented/" data-ajax="false">Listview: collapsible list items (indented)</a></li>
 <li data-filtertext=""><a href="listview-grid/" data-ajax="false">Listview: responsive grid</a></li>
-<li data-filtertext=""><a href="listview-linkbar/" data-ajax="false">Listview: linkbar</a></li>
 
 <li data-filtertext=""><a href="collapsible/" data-ajax="false">Collapsible</a></li>
 <li data-filtertext=""><a href="collapsible-dynamic/" data-ajax="false">Collapsible: dynamic</a></li>
@@ -104,17 +110,17 @@
 
 <li data-filtertext=""><a href="filterable/" data-ajax="false">Filterable</a></li>
 
-<li data-role="list-divider">Form Widgets</li>
+<li data-role="list-divider">Form widgets</li>
 
 <li data-filtertext=""><a href="forms/" data-ajax="false">Forms</a></li>
 
 <li data-filtertext=""><a href="textinput/" data-ajax="false">Textinput</a></li>
-<li data-filtertext=""><a href="button/" data-ajax="false">Input button</a></li>
+<li data-filtertext=""><a href="button/" data-ajax="false">Input buttons</a></li>
 <li data-filtertext=""><a href="checkboxradio-checkbox/" data-ajax="false">Checkboxradio: checkbox</a></li>
 <li data-filtertext=""><a href="checkboxradio-radio/" data-ajax="false">Checkboxradio: radio</a></li>
 <li data-filtertext=""><a href="selectmenu/" data-ajax="false">Selectmenu</a></li>
-<li data-filtertext=""><a href="selectmenu-custom/" data-ajax="false">Selectmenu: custom</a></li>
-<li data-filtertext=""><a href="selectmenu-custom-filter/" data-ajax="false">Selectmenu: custom with filter</a></li>
+<li data-filtertext=""><a href="selectmenu-custom/" data-ajax="false">Selectmenu: custom menu</a></li>
+<li data-filtertext=""><a href="selectmenu-custom-filter/" data-ajax="false">Selectmenu: custom menu with filter</a></li>
 <li data-filtertext=""><a href="slider/" data-ajax="false">Slider</a></li>
 <li data-filtertext=""><a href="slider-flipswitch/" data-ajax="false">Slider: flip toggle switch</a></li>
 <li data-filtertext=""><a href="slider-tooltip/" data-ajax="false">Slider: tooltip</a></li>

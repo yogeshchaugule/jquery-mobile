@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Swipe to navigate - jQuery Mobile Demos</title>
-	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+	<link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
 	<link rel="stylesheet" href="../_assets/css/jqm-demos.css">
 	<link rel="stylesheet" href="swipe-page.css" id="demo-style">
 	<link rel="shortcut icon" href="../favicon.ico">
@@ -13,6 +13,11 @@
 	<script src="../_assets/js/"></script>
 	<script src="../../js/"></script>
 	<script src="swipe-page.js" id="demo-script"></script>
+	<style>
+		#_header, #_footer {
+			display: none;
+		}
+	</style>
 </head>
 <body>
 
@@ -21,8 +26,8 @@
     <div data-role="header" class="jqm-header">
         <h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
     </div><!-- /header -->
 
     <div data-role="content" class="jqm-content">
@@ -32,7 +37,7 @@
         <div data-demo-html="#city" data-demo-js="#demo-script" data-demo-css="#demo-style">
             <p>This demo shows how you can use the swipe event to navigate between pages. We are using single HTML files for each page. Here you can see the JavaScript and CSS source. On each of the demo pages you can see the page markup as well.</p>
 
-            <p><a href="newyork.html" data-prefetch="true" data-transition="fade" data-role="button" data-inline="true">Open swipe page demo</a></p>
+            <p><a href="newyork.html" data-ajax="false" role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Open swipe page demo</a></p>
         </div>
 
 	</div><!-- /content -->
@@ -48,34 +53,36 @@
 
 <!-- The markup below is a copy of the actual demo pages just so we can show the markup in the "view source" -->
 
+<!-- "city", "prevCity" and "nextCity" are used as placeholders and contain the name of the applicable city in our demo files. -->
+
+<!-- The ID's of the header and footer are prefixed here with "_" to prevent the external toolbars to show up on our intro page. -->
+
+<div id="_header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+	<h1>City</h1>
+    <a href="./" data-direction="reverse" data-icon="delete" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
+</div><!-- /header -->
+
 <div data-role="page" id="city" class="demo-page" data-dom-cache="true" data-theme="b" data-prev="prevCity" data-next="nextCity">
-
-	<!-- "city", "prevCity" and "nextCity" are used as placeholders and contain the name of the applicable city in our demo files. -->
-
-	<div data-role="header" data-position="fixed" data-fullscreen="true" data-id="hdr" data-tap-toggle="false">
-		<h1>City</h1>
-        <a href="swipe-page.html" data-direction="reverse" data-icon="delete" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
-    </div><!-- /header -->
 
 	<div data-role="content">
 
 		<div id="trivia-city" class="trivia ui-content" data-role="popup" data-position-to="window" data-tolerance="50,30,30,30" data-theme="a">
-        	<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-		<p>Here some text.</small></p>
+        	<a href="#" data-rel="back" class="ui-btn ui-btn-right ui-btn-b ui-btn-icon-notext ui-icon-delete ui-corner-all" role="button">Close</a>
+			<p>Here some text.</small></p>
         </div><!-- /popup -->
 
 	</div><!-- /content -->
 
-    <div data-role="footer" data-position="fixed" data-fullscreen="true" data-id="ftr" data-tap-toggle="false">
-		<div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
-        	<a href="#" class="prev" data-role="button" data-icon="arrow-l" data-iconpos="notext">Previous</a>
-        	<a href="#" class="next" data-role="button" data-icon="arrow-r" data-iconpos="notext">Next</a>
-        </div>
-
-		<a href="#trivia-city" data-rel="popup" class="trivia-btn ui-btn-right" data-role="button" data-icon="info" data-iconpos="left" data-mini="true">Trivia</a>
-    </div><!-- /footer -->
-
 </div><!-- /page -->
+
+<div id="_footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+	<div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
+    	<a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l" role="button">Previous</a>
+    	<a href="#" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r" role="button">Next</a>
+    </div>
+
+	<a href="#" data-rel="popup" class="trivia-btn ui-btn ui-btn-right ui-btn-icon-left ui-icon-info ui-mini ui-corner-all" role="button">Trivia</a>
+</div><!-- /footer -->
 
 </body>
 </html>

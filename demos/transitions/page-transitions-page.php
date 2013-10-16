@@ -28,17 +28,17 @@
 
 			<p>These are here to see if this slows down rendering.</p>
 
-				<div data-role="fieldcontain">
+				<div class="ui-field-contain">
 		         <label for="name">Text Input:</label>
-		         <input type="text" name="name" id="name" value=""  />
+		         <input type="text" name="name" id="name" value="">
 				</div>
 
-				<div data-role="fieldcontain">
+				<div class="ui-field-contain">
 				<label for="textarea">Textarea:</label>
 				<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
 				</div>
 
-				<div data-role="fieldcontain">
+				<div class="ui-field-contain">
 					<label for="slider2">Flip switch:</label>
 					<select name="slider2" id="slider2" data-role="slider">
 						<option value="off">Off</option>
@@ -46,20 +46,20 @@
 					</select>
 				</div>
 
-				<div data-role="fieldcontain">
+				<div class="ui-field-contain">
 					<label for="slider">Slider:</label>
-				 	<input type="range" name="slider" id="slider" value="0" min="0" max="100" data-highlight="true" />
+				 	<input type="range" name="slider" id="slider" value="0" min="0" max="100" data-highlight="true">
 				</div>
 
 			</form>
 
-			<a href="index.php" data-role="button" data-theme="b" data-rel="back" data-inline="true">Take me back</a>
+			<a href="index.php" role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-inline" data-rel="back">Take me back</a>
 		</div>
 
 		<div data-role="footer" data-theme="a">
 			<div style="margin:5px 10px;"><!-- To add a bit of spacing -->
 			<label for="search" class="ui-hidden-accessible">Search:</label>
-	        <input type="search" name="password" id="search" placeholder="Search..." value="" />
+	        <input type="search" name="password" id="search" placeholder="Search..." value="">
 			</div>
 		</div><!-- /footer -->
 	</div>

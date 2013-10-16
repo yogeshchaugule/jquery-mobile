@@ -26,10 +26,10 @@ define( [
 		},
 
 		_create: function() {
-			var leftbtn, rightbtn, backBtn,
+			var leftbtn, rightbtn,
 				role =  this.element.is( ":jqmData(role='header')" ) ? "header" : "footer",
 				page = this.element.closest( ".ui-page" );
-			if ( page.length === 0 ){
+			if ( page.length === 0 ) {
 				page = false;
 				this._on( this.document, {
 					"pageshow": "refresh"
@@ -40,7 +40,7 @@ define( [
 				page: page,
 				leftbtn: leftbtn,
 				rightbtn: rightbtn,
-				backBtn: backBtn
+				backBtn: null
 			});
 			this.element.attr( "role", role === "header" ? "banner" : "contentinfo" ).addClass( "ui-" + role );
 			this.refresh();
@@ -58,7 +58,7 @@ define( [
 					this.element.find( ".ui-toolbar-back-btn" ).remove();
 				}
 			}
-			if ( o.backBtnTheme !== undefined ) {
+			if ( o.backBtnTheme != null ) {
 				this.element
 					.find( ".ui-toolbar-back-btn" )
 					.addClass( "ui-btn ui-btn-" + o.backBtnTheme );
@@ -80,7 +80,7 @@ define( [
 				this._addHeaderButtonClasses();
 			}
 			if ( !this.page ) {
-				$( "[data-"+ $.mobile.ns +"role='page']" ).css({"position":"relative"});
+				this._setRelative();
 				if ( this.role === "footer" ) {
 					this.element.appendTo( "body" );
 				}
@@ -88,11 +88,18 @@ define( [
 			this._addHeadingClasses();
 			this._btnMarkup();
 		},
-		// Deprecated in 1.4. As from 1.5 data-role="button" has to be present in the markup.
+
+		//we only want this to run on non fixed toolbars so make it easy to override 
+		_setRelative: function() {
+			$( "[data-"+ $.mobile.ns + "role='page']" ).css({ "position": "relative" });
+		},
+
+		// Deprecated in 1.4. As from 1.5 button classes have to be present in the markup.
 		_btnMarkup: function() {
 			this.element.children( "a" ).attr( "data-" + $.mobile.ns + "role", "button" );
 			this.element.trigger( "create" );
 		},
+		// Deprecated in 1.4. As from 1.5 ui-btn-left/right classes have to be present in the markup.
 		_addHeaderButtonClasses: function() {
 			var $headeranchors = this.element.children( "a, button" );
 			this.leftbtn = $headeranchors.hasClass( "ui-btn-left" );
@@ -104,10 +111,18 @@ define( [
 
 		},
 		_addBackButton: function() {
-			this.backBtn = $( "<a role='button' href='javascript:void(0);' class='ui-btn-left ui-toolbar-back-btn' data-" + $.mobile.ns + "rel='back' data-" + $.mobile.ns + "icon='carat-l'>" + this.options.backBtnText + "</a>" )
-					// If theme is provided, override default inheritance
-					.attr( "data-" + $.mobile.ns + "theme", this.options.backBtnTheme || this.options.theme )
-					.prependTo( this.element );
+			var theme,
+				options = this.options;
+
+			if ( !this.backBtn ) {
+				theme = options.backBtnTheme || options.theme;
+				this.backBtn = $( "<a role='button' href='javascript:void(0);' " +
+					"class='ui-btn ui-corner-all ui-shadow ui-btn-left " +
+						( theme ? "ui-btn-" + theme + " " : "" ) +
+						"ui-toolbar-back-btn ui-icon-carat-l ui-btn-icon-left' " +
+					"data-" + $.mobile.ns + "rel='back'>" + options.backBtnText + "</a>" )
+						.prependTo( this.element );
+			}
 		},
 		_addHeadingClasses: function() {
 			this.element.children( "h1, h2, h3, h4, h5, h6" )

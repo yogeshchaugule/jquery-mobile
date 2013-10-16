@@ -174,13 +174,21 @@ $.widget( "mobile.popup", {
 		return false;
 	},
 
-	// Make sure the screen size is increased beyond the page height if the popup's causes the document to increase in height
+	// Make sure the screen covers the entire document - CSS is sometimes not
+	// enough to accomplish this.
 	_resizeScreen: function() {
-		var popupHeight = this._ui.container.outerHeight( true );
+		var screen = this._ui.screen,
+			popupHeight = this._ui.container.outerHeight( true ),
+			screenHeight = screen.removeAttr( "style" ).height(),
 
-		this._ui.screen.removeAttr( "style" );
-		if ( popupHeight > this._ui.screen.height() ) {
-			this._ui.screen.height( popupHeight );
+			// Subtracting 1 here is necessary for an obscure Andrdoid 4.0 bug where
+			// the browser hangs if the screen covers the entire document :/
+			documentHeight = this.document.height() - 1;
+
+		if ( screenHeight < documentHeight ) {
+			screen.height( documentHeight );
+		} else if ( popupHeight > screenHeight ) {
+			screen.height( popupHeight );
 		}
 	},
 
@@ -613,11 +621,16 @@ $.widget( "mobile.popup", {
 	},
 
 	_openPrerequisitesComplete: function() {
+		var id = this.element.attr( "id" );
+
 		this._ui.container.addClass( "ui-popup-active" );
 		this._isOpen = true;
 		this._resizeScreen();
 		this._ui.container.attr( "tabindex", "0" ).focus();
 		this._ignoreResizeEvents();
+		if ( id ) {
+			this.document.find( "[aria-haspopup='true'][aria-owns='" +  id + "']" ).attr( "aria-expanded", true );
+		}
 		this._trigger( "afteropen" );
 	},
 
@@ -695,7 +708,8 @@ $.widget( "mobile.popup", {
 	},
 
 	_closePrerequisitesDone: function() {
-		var container = this._ui.container;
+		var container = this._ui.container,
+			id = this.element.attr( "id" );
 
 		container.removeAttr( "tabindex" );
 
@@ -704,6 +718,10 @@ $.widget( "mobile.popup", {
 
 		// Blur elements inside the container, including the container
 		$( ":focus", container[ 0 ] ).add( container[ 0 ] ).blur();
+
+		if ( id ) {
+			this.document.find( "[aria-haspopup='true'][aria-owns='" +  id + "']" ).attr( "aria-expanded", false );
+		}
 
 		// alert users that the popup is closed
 		this._trigger( "afterclose" );
@@ -868,7 +886,7 @@ $.widget( "mobile.popup", {
 
 		// if the current url has no dialog hash key proceed as normal
 		// otherwise, if the page is a dialog simply tack on the hash key
-		if ( url.indexOf( hashkey ) === -1 && !currentIsDialog ){
+		if ( url.indexOf( hashkey ) === -1 && !currentIsDialog ) {
 			url = url + (url.indexOf( "#" ) > -1 ? hashkey : "#" + hashkey);
 		} else {
 			url = $.mobile.path.parseLocation().hash + hashkey;

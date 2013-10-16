@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Selects - jQuery Mobile Demos</title>
-    <link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
     <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -18,21 +18,21 @@
     <div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
     </div><!-- /header -->
 
     <div data-role="content" class="jqm-content">
 
         <h1>Select menu</h1>
 
-        <p>The select menu is based on a native select element, which is hidden from view and replaced with a custom-styled select button. Tapping it opens the native menu. There is also a <a href="custom-selects.php">custom select menu</a> widget, which also replaces the native dropdown.
+        <p>The select menu is based on a native select element, which is hidden from view and replaced with a custom-styled select button. Tapping it opens the native menu. There is also a <a href="../selectmenu-custom/">custom select menu</a> widget, which also replaces the native dropdown.
         </p>
 
         <h2>Basic select</h2>
         <div data-demo-html="true">
             <form>
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                 <label for="select-native-1">Basic:</label>
                 <select name="select-native-1" id="select-native-1">
                     <option value="1">The 1st Option</option>
@@ -48,7 +48,7 @@
 
         <div data-demo-html="true">
             <form>
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                 <label for="select-native-2">Mini sized:</label>
                 <select name="select-native-2" id="select-native-2" data-mini="true">
                     <option value="1">The 1st Option</option>
@@ -64,7 +64,7 @@
 
         <div data-demo-html="true">
             <form>
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                 <label for="select-native-3">Icon left:</label>
                 <select name="select-native-3" id="select-native-3" data-iconpos="left">
                     <option value="1">The 1st Option</option>
@@ -80,7 +80,7 @@
 
         <div data-demo-html="true">
             <form>
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                 <label for="select-native-17">1 option selected:</label>
                 <select name="select-native-17" id="select-native-17">
                     <option value="1">The 1st Option</option>
@@ -96,7 +96,7 @@
 
         <div data-demo-html="true">
             <form>
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                 <label for="select-native-18">1 option disabled:</label>
                 <select name="select-native-18" id="select-native-18">
                     <option value="1">The 1st Option</option>
@@ -112,7 +112,7 @@
 
         <div data-demo-html="true">
             <form>
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                 <label for="select-native-4">Optgroup (if supported):</label>
                 <select name="select-native-4" id="select-native-4">
                     <option>Choose...</option>

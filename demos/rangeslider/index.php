@@ -27,8 +27,8 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
@@ -135,7 +135,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
                         <div data-role="rangeslider">
                             <label for="range-7a">Rangeslider:</label>
                             <input type="range" name="range-7a" id="range-7a" min="0" max="100" value="0">
@@ -150,7 +150,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
                         <div data-role="rangeslider" data-mini="true">
                             <label for="range-8a">Rangeslider:</label>
                             <input type="range" name="range-8a" id="range-8a" min="0" max="100" value="0">
@@ -165,7 +165,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain" class="ui-hide-label">
+					<div class="ui-field-contain ui-hide-label">
                         <div data-role="rangeslider">
                             <label for="range-9a">Rangeslider:</label>
                             <input type="range" name="range-9a" id="range-9a" min="0" max="100" value="0">
@@ -180,7 +180,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain" class="ui-hide-label">
+					<div class="ui-field-contain ui-hide-label">
                         <div data-role="rangeslider" data-mini="true">
                             <label for="range-11a">Rangeslider:</label>
                             <input type="range" name="range-11a" id="range-11a" min="0" max="100" value="0">

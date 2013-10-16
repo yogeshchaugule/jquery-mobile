@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Collapsible - jQuery Mobile Demos</title>
-    <link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
     <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -21,13 +21,13 @@
     <div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
     </div><!-- /header -->
 
     <div data-role="content" class="jqm-content">
 
-            <h1>Collapsibles</h1>
+            <h1>Collapsible</h1>
 
             <p>Collapsibles are simple widgets that allow you to expand or collapse content when tapped and are useful in mobile to provide a compact presentation of content.
             </p>
@@ -130,11 +130,11 @@
                     <input type="text" name="textinput-f" id="textinput-f" placeholder="Text input" value="">
 
                     <div data-role="controlgroup">
-                        <input type="checkbox" name="checkbox-1-a" id="checkbox-1-a" />
+                        <input type="checkbox" name="checkbox-1-a" id="checkbox-1-a">
                         <label for="checkbox-1-a">One</label>
-                        <input type="checkbox" name="checkbox-2-a" id="checkbox-2-a" />
+                        <input type="checkbox" name="checkbox-2-a" id="checkbox-2-a">
                         <label for="checkbox-2-a">Two</label>
-                        <input type="checkbox" name="checkbox-3-a" id="checkbox-3-a" />
+                        <input type="checkbox" name="checkbox-3-a" id="checkbox-3-a">
                         <label for="checkbox-3-a">Three</label>
                     </div>
                 </fieldset>

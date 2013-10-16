@@ -68,8 +68,8 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
@@ -87,7 +87,7 @@
                 </div>
             </form>
 
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                 <label for="prepend">Add item</label>
                 <button id="prepend" data-mini="true" data-inline="true">Prepend</button>
                 <label for="append" class="ui-hidden-accessible">Action</label>
@@ -95,7 +95,7 @@
             </div>
 
             <form action="#" method="get">
-            	<div data-role="fieldcontain">
+            	<div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Widget type</legend>
     
@@ -110,7 +110,7 @@
                     </fieldset>
             	</div>
 
-            	<div data-role="fieldcontain">
+            	<div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Action<br><small>on click/change</small></legend>
     
@@ -125,7 +125,7 @@
                     </fieldset>
             	</div>
 
-            	<div data-role="fieldcontain">
+            	<div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Switch orientation</legend>
     

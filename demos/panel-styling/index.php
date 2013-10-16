@@ -32,27 +32,29 @@
 			transform: translate3d(15em,0,0);
 		}
 
-		/* Combined listview collapsible menu. */
-		/* Unset negative margin bottom on the listviews. */
-		#left-panel .ui-panel-inner > .ui-listview { margin-bottom: 0; }
-		/* Unset top and bottom margin on collapsible set. */
-		#left-panel .ui-collapsible-set { margin: 0; }
-		/* The first collapsible contains the collapsible set. Make it fit exactly in the collapsible content. */
-		#left-panel .ui-panel-inner > .ui-collapsible > .ui-collapsible-content { padding-top: 0; padding-bottom: 0;  border-bottom: none; }
-		/* Remove border top if a collapsible comes after a listview. */
-		#left-panel .ui-panel-inner  > .ui-collapsible > .ui-collapsible-heading .ui-btn,
-		#left-panel .ui-collapsible.ui-first-child .ui-collapsible-heading .ui-btn { border-top: none; }
-		/* Give the first collapsible heading the same padding, i.e. same height, as the list items. */
-		#left-panel .ui-collapsible-heading .ui-btn-inner { padding: .7em 40px .7em 15px; }
-		/* Give the other collapsible headings the same padding and font-size as the list divider. */
-		#left-panel .ui-collapsible-set .ui-collapsible-heading .ui-btn-inner { padding: .5em 40px .5em 15px; font-size: 14px; }
+		/* Listview with collapsible list items. */
+	    .ui-listview > li .ui-collapsible-heading {
+	      margin: 0;
+	    }
+	    .ui-collapsible.ui-li-static {
+	      padding: 0;
+	      border: none !important;
+	    }
+	    .ui-collapsible + .ui-collapsible > .ui-collapsible-heading > .ui-btn {
+	      border-top: none !important;
+	    }
+	    /* Nested list button colors */
+	    .ui-listview .ui-listview .ui-btn {
+	    	background: #fff;
+	    }
+	    .ui-listview .ui-listview .ui-btn:hover {
+	    	background: #f5f5f5;
+	    }
+	    .ui-listview .ui-listview .ui-btn:active {
+	    	background: #f1f1f1;
+	    }
 
-		/* Styling of the close button in both panels. */
-		#demo-page .ui-panel-inner > .ui-listview .ui-first-child {
-			background: #eee;
-		}
-
-		/* Reveal menu shadow on top of the list items */
+		/* Reveal panel shadow on top of the listview menu (only to be used if you don't use fixed toolbars) */
 		#demo-page .ui-panel-display-reveal {
 			-webkit-box-shadow: none;
 			-moz-box-shadow: none;
@@ -67,6 +69,7 @@
 		/* Setting a custom background image. */
 		#demo-page.ui-page-theme-a,
 		#demo-page .ui-panel-wrapper {
+			background-color: #fff;
 			background-image: url(../_assets/img/bg-pattern.png);
 			background-repeat: repeat-x;
 			background-position: left bottom;
@@ -121,8 +124,8 @@
     <div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
     </div><!-- /header -->
 
     <div data-role="content" class="jqm-content">
@@ -141,7 +144,7 @@
         
         <p>Click the "view source" button to see the CSS and markup of this demo and open the demo to see the result.</p>
 
-        <a href="#demo-page" data-role="button" data-inline="true" data-mini="true" data-icon="carat-r" data-iconpos="right">Open demo</a>
+        <a href="#demo-page" role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini ui-icon-carat-r ui-btn-icon-right">Open demo</a>
 
         <div data-demo-html="#demo-page" data-demo-css="true"></div><!--/demo-html -->
 
@@ -174,7 +177,7 @@
 
             <p><small>Source: Wikipedia</small></p>
 
-            <p><a href="#right-panel" data-role="button" data-inline="true" data-mini="true" data-shadow="false">Share</a></p>
+            <p><a href="#right-panel" role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">Share</a></p>
 
 		</div><!-- /article -->
 
@@ -184,57 +187,48 @@
 
         <ul data-role="listview">
         	<li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
-        	<li data-role="list-divider">Menu</li>
         	<li data-icon="back"><a href="#demo-intro" data-rel="back">Demo intro</a></li>
+        	<li data-role="list-divider">Categories</li>
+
+	        <li data-role="collapsible" data-inset="false" data-iconpos="right">
+
+	          <h3>Bikes</h3>
+
+	          <ul data-role="listview">
+	            <li><a href="#">Road</a></li>
+	            <li><a href="#">ATB</a></li>
+	            <li><a href="#">Fixed Gear</a></li>
+	            <li><a href="#">Cruiser</a></li>
+	          </ul>
+
+	        </li><!-- /collapsible -->
+
+	        <li data-role="collapsible" data-inset="false" data-iconpos="right">
+
+	          <h3>Cars</h3>
+
+	          <ul data-role="listview">
+	            <li><a href="#">SUV</a></li>
+	            <li><a href="#">Sport</a></li>
+	            <li><a href="#">Convertible</a></li>
+	          </ul>
+
+	        </li><!-- /collapsible -->
+
+	        <li data-role="collapsible" data-inset="false" data-iconpos="right">
+
+	          <h3>Boats</h3>
+
+	          <ul data-role="listview" >
+	            <li><a href="#">Runabout</a></li>
+	            <li><a href="#">Motorboat</a></li>
+	            <li><a href="#">Sailboat</a></li>
+	            </li>
+	          </ul>
+
+	        </li><!-- /collapsible -->
+
         </ul>
-
-        <div data-role="collapsible" data-inset="false" data-iconpos="right">
-
-          <h3>Categories</h3>
-
-          <div data-role="collapsible-set" data-inset="false" data-iconpos="right">
-
-            <div data-role="collapsible">
-
-              <h3>Bikes</h3>
-
-              <ul data-role="listview">
-                <li><a href="#">Road</a></li>
-                <li><a href="#">ATB</a></li>
-                <li><a href="#">Fixed Gear</a></li>
-                <li><a href="#">Cruiser</a></li>
-              </ul>
-
-            </div><!-- /collapsible -->
-
-            <div data-role="collapsible">
-
-              <h3>Cars</h3>
-
-              <ul data-role="listview">
-                <li><a href="#">SUV</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Convertible</a></li>
-              </ul>
-
-            </div><!-- /collapsible -->
-
-            <div data-role="collapsible">
-
-              <h3>Boats</h3>
-
-              <ul data-role="listview">
-                <li><a href="#">Runabout</a></li>
-                <li><a href="#">Motorboat</a></li>
-                <li><a href="#">Sailboat</a></li>
-                </li>
-              </ul>
-
-            </div><!-- /collapsible -->
-
-		  </div><!-- /collapsible-set -->
-
-  		</div><!-- /collapsible -->
 
     </div><!-- /panel -->
 

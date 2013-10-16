@@ -18,8 +18,8 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
@@ -34,7 +34,7 @@
                 <div data-demo-html="true">
 				<form>
                     <label for="flip-checkbox">Flip toggle switch checkbox:</label>
-                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" id="flip-checkbox"/>
+                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" id="flip-checkbox">
 				</form>
                 </div><!-- /demo-html -->
 
@@ -43,7 +43,7 @@
                 <div data-demo-html="true">
                 <form>
                     <label for="flip-checkbox">Flip toggle switch checkbox:</label>
-                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" id="flip-checkbox" checked/>
+                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" id="flip-checkbox" checked>
                 </form>
                 </div><!-- /demo-html -->
 				
@@ -94,6 +94,18 @@
 				</form>
                 </div><!-- /demo-html -->
 
+                <h2>No corners</h2>
+
+                <div data-demo-html="true">
+				<form>
+                    <label for="flip-8">Flip toggle switch:</label>
+                    <select name="flip-8" id="flip-8" data-role="flipswitch" data-corners="false">
+                        <option value="off">Off</option>
+                        <option value="on">On</option>
+                    </select>
+				</form>
+                </div><!-- /demo-html -->
+
                 <h2>Disabled</h2>
 
                 <div data-demo-html="true">
@@ -122,7 +134,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
                         <label for="flip-6">Flip toggle switch:</label>
                         <select name="flip-6" id="flip-6" data-role="flipswitch">
                             <option value="off">Off</option>
@@ -136,7 +148,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
                         <label for="flip-7">Flip toggle switch:</label>
                         <select name="flip-7" id="flip-7" data-role="flipswitch" data-mini="true">
                             <option value="off">Off</option>

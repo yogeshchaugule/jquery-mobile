@@ -8,11 +8,9 @@ define( [ "jquery", "../jquery.mobile.widget", "../jquery.mobile.core", "../jque
 (function( $, undefined ) {
 	$.widget( "mobile.toolbar", $.mobile.toolbar, {
 
-		_create: function() {
+		_makeFixed: function() {
 			this._super();
-			if ( this.element.hasClass( "ui-" + this.role + "-fixed" ) ) {
-				this._workarounds();
-			}
+			this._workarounds();
 		},
 
 		//check the browser and version and run needed workarounds

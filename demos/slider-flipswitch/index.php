@@ -27,8 +27,8 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
@@ -101,7 +101,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
                         <label for="flip-6">Flip toggle switch:</label>
                         <select name="flip-6" id="flip-6" data-role="slider">
                             <option value="off">Off</option>
@@ -115,7 +115,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
                         <label for="flip-7">Flip toggle switch:</label>
                         <select name="flip-7" id="flip-7" data-role="slider" data-mini="true">
                             <option value="off">Off</option>
@@ -128,7 +128,7 @@
                 <h2>Fieldcontain, hidden label</h2>
 
                 <div data-demo-html="true">
-					<div data-role="fieldcontain" class="ui-hide-label">
+					<div class="ui-field-contain ui-hide-label">
                         <label for="flip-8">Flip toggle switch:</label>
                         <select name="flip-8" id="flip-8" data-role="slider">
                             <option value="off">Off</option>
@@ -142,7 +142,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain" class="ui-hide-label">
+					<div class="ui-field-contain ui-hide-label">
                         <label for="flip-9">Flip toggle switch:</label>
                         <select name="flip-9" id="flip-9" data-role="slider" data-mini="true">
                             <option value="off">Off</option>

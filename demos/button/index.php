@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Input button - jQuery Mobile Demos</title>
+	<title>Input buttons - jQuery Mobile Demos</title>
 	<link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
@@ -18,15 +18,15 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
 
-		<h1>Input button</h1>
+		<h1>Input buttons</h1>
 
-		<p>Examples of how to style input buttons. See <a href="../button-markup/">this page</a> for examples of <code>a</code> and <code>button</code> elements.</p>
+		<p>Examples of how to style input buttons; <code>input</code> elements with <code>type="button"</code>, <code>type="submit"</code>, or <code>type="reset"</code>. See <a href="../button-markup/">button markup</a> for examples of <code>a</code> and <code>button</code> elements.</p>
 		
 		<p>Note that in 1.4 <code>data-</code> attributes will still work, but the style options are deprecated.</p>
 

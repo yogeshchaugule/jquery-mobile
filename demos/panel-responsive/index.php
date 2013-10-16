@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Panel fixed positioning - jQuery Mobile Demos</title>
-    <link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
     <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
 	<link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -48,7 +48,7 @@
 <body>
 <div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-fixed-page1">
 
-    <div data-role="header" data-theme="f" data-position="fixed">
+    <div data-role="header" data-position="fixed">
         <h1>Fixed header</h1>
         <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
         <a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
@@ -68,13 +68,13 @@
 
         <p>To make this responsive, you can make the page re-flow at wider widths. This allows both the reveal panel menu and page to be used together when more space is available. This behavior is controlled by CSS media queries. You can create a custom one for a specific breakpoint or use the breakpoint preset by adding the <code>class="ui-responsive-panel"</code> to the page container. We have added this class on this demo page.</p>
 
-        <a href="./" data-ajax="false" data-role="button" data-mini="true" data-inline="true" data-icon="arrow-l" data-iconpos="left">Back to Panels</a>
+        <a href="./" data-ajax="false" role="button" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-arrow-l ui-btn-icon-left">Back to Panels</a>
 
 		<div data-demo-html="#panel-fixed-page1" data-demo-css="true"></div><!--/demo-html -->
 
 	</div><!-- /content -->
 
-    <div data-role="footer" data-position="fixed" data-theme="f">
+    <div data-role="footer" data-position="fixed">
     	<h4>Fixed footer</h4>
     </div><!-- /footer -->
 
@@ -130,8 +130,8 @@
             <input type="password" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
 
             <div class="ui-grid-a">
-                <div class="ui-block-a"><a href="#" data-rel="close" data-role="button" data-theme="b" data-mini="true">Cancel</a></div>
-                <div class="ui-block-b"><a href="#" data-rel="close" data-role="button" data-theme="b" data-mini="true">Save</a></div>
+                <div class="ui-block-a"><a href="#" data-rel="close" role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Save</a></div>
 			</div>
         </form>
 
@@ -141,7 +141,7 @@
 
 <div data-role="page" id="panel-fixed-page2">
 
-    <div data-role="header" data-theme="f">
+    <div data-role="header">
         <h1>Landing page</h1>
     </div><!-- /header -->
 
@@ -149,7 +149,7 @@
 
         <p>This is just a landing page.</p>
 
-        <a href="#panel-fixed-page1" data-role="button" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+        <a href="#panel-fixed-page1" role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini ui-icon-back ui-btn-icon-left">Back</a>
 
     </div><!-- /content -->
 

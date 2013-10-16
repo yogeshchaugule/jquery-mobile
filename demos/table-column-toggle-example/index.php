@@ -83,8 +83,8 @@
     <div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
     </div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
@@ -120,10 +120,10 @@
               <tbody>
                 <tr class="photos">
                   <th class="label">Photo</th>
-                  <td><a href="#img-iphone5" data-rel="popup" data-position-to="window"><img src="../_assets/img/phone_iphone5.png" /></a></td>
-                  <td><a href="#img-galaxy" data-rel="popup" data-position-to="window"><img src="../_assets/img/phone_galaxy3.png" /></a></td>
-                  <td><a href="#img-lumia" data-rel="popup" data-position-to="window"><img src="../_assets/img/phone_lumia920.png" /></a></td>
-                  <td><a href="#img-onex" data-rel="popup" data-position-to="window"><img src="../_assets/img/phone_onex.png" /></a></td>
+                  <td><a href="#img-iphone5" data-rel="popup" data-position-to="window"><img src="../_assets/img/phone_iphone5.png"></a></td>
+                  <td><a href="#img-galaxy" data-rel="popup" data-position-to="window"><img src="../_assets/img/phone_galaxy3.png"></a></td>
+                  <td><a href="#img-lumia" data-rel="popup" data-position-to="window"><img src="../_assets/img/phone_lumia920.png"></a></td>
+                  <td><a href="#img-onex" data-rel="popup" data-position-to="window"><img src="../_assets/img/phone_onex.png"></a></td>
                 </tr>
                 <tr>
                   <th class="label">Height</th>

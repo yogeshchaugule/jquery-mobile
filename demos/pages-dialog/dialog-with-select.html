@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dialog example - jQuery Mobile Demos</title>
-	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+	<link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
 	<link rel="stylesheet" href="../_assets/css/jqm-demos.css">
 	<link rel="shortcut icon" href="../favicon.ico">
 	<script src="../../js/jquery.js"></script>
@@ -19,7 +19,7 @@
 		<h1>Dialog select test</h1>
 		</div>
 		<div data-role="content" >
-			<a href="#bar" data-role="button">Open dialog</a>
+			<a href="#bar" role="button" class="ui-btn ui-shadow ui-corner-all">Open dialog</a>
 		</div>
 		
 </div>		
@@ -39,7 +39,7 @@
 		<div data-role="content">
 			
 			<form action>
-				<div data-role="fieldcontain">
+				<div class="ui-field-contain">
 					<label for="select-choice-1" class="select">Choose shipping method:</label>
 					<select name="select-choice-1" id="select-choice-1" data-native-menu="false">
 						<option value="standard">Standard: 7 day</option>
@@ -49,7 +49,7 @@
 					</select>
 				</div>
 				
-				<div data-role="fieldcontain">
+				<div class="ui-field-contain">
 					<label for="select-choice-3" class="select">Your state:</label>
 					<select name="select-choice-3" id="select-choice-3" data-native-menu="false">
 						<option value="AL">Alabama</option>
@@ -105,9 +105,9 @@
 					</select>
 				</div>
 			
-				<a href="#foo" data-role="button" data-rel="back">Real Submit Would go here</a>      
+				<a href="#foo" role="button" class="ui-btn ui-shadow ui-corner-all" data-rel="back">Real Submit Would go here</a>
 			</form>
-			<a href="#foo" data-role="button" data-rel="back">Cancel</a>    
+			<a href="#foo" role="button" class="ui-btn ui-shadow ui-corner-all" data-rel="back">Cancel</a>
 		</div>
 	</div>
 

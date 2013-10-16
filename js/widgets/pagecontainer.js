@@ -55,7 +55,7 @@ define( [
 			}, this));
 		},
 
-		_setOptions: function( options ){
+		_setOptions: function( options ) {
 			if ( options.theme !== undefined && options.theme !== "none" ) {
 				this.element.removeClass( "ui-overlay-" + this.options.theme )
 					.addClass( "ui-overlay-" + options.theme );
@@ -139,7 +139,7 @@ define( [
 				url = this._getHash();
 			}
 
-			if ( !url || url === "#" || url.indexOf( "#" + $.mobile.path.uiStateKey ) === 0 ){
+			if ( !url || url === "#" || url.indexOf( "#" + $.mobile.path.uiStateKey ) === 0 ) {
 				url = location.href;
 			}
 
@@ -176,12 +176,34 @@ define( [
 			return $.mobile.path.documentBase;
 		},
 
-		_back: function() {
-			$.mobile.back();
+		back: function() {
+			this.go( -1 );
 		},
 
-		_forward: function() {
-			window.history.forward();
+		forward: function() {
+			this.go( 1 );
+		},
+
+		go: function( steps ) {
+
+			//if hashlistening is enabled use native history method
+			if ( $.mobile.hashListeningEnabled ) {
+				window.history.go( steps );
+			} else {
+
+				//we are not listening to the hash so handle history internally
+				var activeIndex = $.mobile.navigate.history.activeIndex,
+					index = activeIndex + parseInt( steps, 10 ),
+					url = $.mobile.navigate.history.stack[ index ].url,
+					direction = ( steps >= 1 )? "forward" : "back";
+
+				//update the history object
+				$.mobile.navigate.history.activeIndex = index;
+				$.mobile.navigate.history.previousIndex = activeIndex;
+
+				//change to the new page
+				this.change( url, { direction: direction, changeHash: false, fromHashChange: true } );
+			}
 		},
 
 		// TODO rename _handleDestination
@@ -231,9 +253,9 @@ define( [
 				// determine if we're heading forward or backward and continue
 				// accordingly past the current dialog
 				if ( data.direction === "back" ) {
-					this._back();
+					this.back();
 				} else {
-					this._forward();
+					this.forward();
 				}
 
 				// prevent changePage call
@@ -370,14 +392,20 @@ define( [
 		_showLoading: function( delay, theme, msg, textonly ) {
 			// This configurable timeout allows cached pages a brief
 			// delay to load without showing a message
+			if ( this._loadMsg ) {
+				return;
+			}
+
 			this._loadMsg = setTimeout($.proxy(function() {
 				this._getLoader().loader( "show", theme, msg, textonly );
+				this._loadMsg = 0;
 			}, this), delay );
 		},
 
 		_hideLoading: function() {
 			// Stop message show timer
 			clearTimeout( this._loadMsg );
+			this._loadMsg = 0;
 
 			// Hide loading message
 			this._getLoader().loader( "hide" );
@@ -487,13 +515,30 @@ define( [
 				}
 
 				//dont update the base tag if we are prefetching
-				if ( settings.prefetch === undefined ){
+				if ( settings.prefetch === undefined ) {
 					this._getBase().set( fileUrl );
 				}
 
 				content = this._parse( html, fileUrl );
 
 				this._setLoadedTitle( content, html );
+
+				// Add the content reference and xhr to our triggerData.
+				triggerData.xhr = xhr;
+				triggerData.textStatus = textStatus;
+
+				// DEPRECATED
+				triggerData.page = content;
+
+				triggerData.content = content;
+
+				// If the default behavior is prevented, stop here!
+				// Note that it is the responsibility of the listener/handler
+				// that called preventDefault(), to resolve/reject the
+				// deferred object within the triggerData.
+				if ( !this._trigger( "load", undefined, triggerData ) ) {
+					return;
+				}
 
 				// rewrite src and href attrs to use a base url if the base tag won't work
 				if ( this._isRewritableBaseTag() && content ) {
@@ -514,17 +559,10 @@ define( [
 					this._hideLoading();
 				}
 
-				// Add the content reference and xhr to our triggerData.
-				triggerData.xhr = xhr;
-				triggerData.textStatus = textStatus;
-
-				// DEPRECATED
-				triggerData.page = content;
-
-				triggerData.content = content;
-
+				// BEGIN DEPRECATED ---------------------------------------------------
 				// Let listeners know the content loaded successfully.
-				this._triggerWithDeprecated( "load", triggerData );
+				this.element.trigger( "pageload" );
+				// END DEPRECATED -----------------------------------------------------
 
 				deferred.resolve( absUrl, settings, content );
 			}, this);
@@ -552,7 +590,7 @@ define( [
 		load: function( url, options ) {
 			// This function uses deferred notifications to let callers
 			// know when the content is done loading, or if an error has occurred.
-			var deferred = options.deferred || $.Deferred(),
+			var deferred = ( options && options.deferred ) || $.Deferred(),
 
 				// The default load options with overrides specified by the caller.
 				settings = $.extend( {}, this._loadDefaults, options ),
@@ -616,7 +654,7 @@ define( [
 
 				//if we are reloading the content make sure we update
 				// the base if its not a prefetch
-				if ( !settings.prefetch ){
+				if ( !settings.prefetch ) {
 					this._getBase().set(url);
 				}
 
@@ -710,13 +748,21 @@ define( [
 
 		// TODO move into transition handlers?
 		_triggerCssTransitionEvents: function( to, from, prefix ) {
+			var samePage = false;
+
 			prefix = prefix || "";
 
 			// TODO decide if these events should in fact be triggered on the container
 			if ( from ) {
+
+				//Check if this is a same page transition and tell the handler in page
+				if( to[0] === from[0] ){
+					samePage = true;
+				}
+
 				//trigger before show/hide events
 				// TODO deprecate nextPage in favor of next
-				this._triggerWithDeprecated( prefix + "hide", { nextPage: to }, from );
+				this._triggerWithDeprecated( prefix + "hide", { nextPage: to, samePage: samePage }, from );
 			}
 
 			// TODO deprecate prevPage in favor of previous

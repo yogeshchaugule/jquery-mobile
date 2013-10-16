@@ -18,8 +18,8 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
@@ -125,7 +125,7 @@
 &lt;/html&gt;
 </code></pre>
 
-		<a href="page-template.html" data-ajax="false" data-role="button" data-inline="true" data-mini="true" data-icon="arrow-r" data-iconpos="right">View page template</a>
+		<a href="../pages-single-page/index.html" data-ajax="false" role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini ui-icon-arrow-r ui-btn-icon-right">View page template</a>
 
 		<h2>Multi-page template structure</h2>
 
@@ -172,7 +172,7 @@
 &lt;/body&gt;
 </code></pre>
 
-		<a href="multipage-template.html" data-ajax="false" data-role="button" data-inline="true" data-mini="true" data-icon="arrow-r" data-iconpos="right">View multi-page template</a>
+		<a href="../pages-multi-page/index.html" data-ajax="false" role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini ui-icon-arrow-r ui-btn-icon-right">View multi-page template</a>
 
 		<p>PLEASE NOTE: Since we are using the hash to track navigation history for all the AJAX "pages", it's not currently possible to deep link to an anchor (<code>index.html#foo</code>) on a page in jQuery Mobile, because the framework will look for a "page" with an <code>id</code> of <code>#foo</code> instead of the native behavior of scrolling to the content with that <code>id</code>.</p>
 
@@ -200,14 +200,14 @@
 
 	<div data-demo-html="true">
 
-		<a href="../dialog/dialog-alt.html" data-prefetch="true" data-rel="dialog">This link will prefetch the page</a>
+		<a href="../pages-dialog/dialog-alt.html" data-prefetch="true">This link will prefetch the page</a>
 
 	</div><!--/demo-html -->
 
-  <p>Alternatively, you can prefetch a page programmatically using <code>$.mobile.loadPage()</code>:</p>
+  <p>Alternatively, you can prefetch a page programmatically using the pagecontainer widget's <code>load()</code> method:</p>
 
 <pre><code>
-$.mobile.loadPage( <var>pageUrl</var>, { showLoadMsg: false } );
+$( ":mobile-pagecontainer" ).pagecontainer( "load", <var>pageUrl</var>, { showLoadMsg: false } );
 </code></pre>
 
 		<h2>DOM Cache</h2>

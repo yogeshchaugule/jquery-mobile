@@ -45,16 +45,14 @@ $.widget( "mobile.checkboxradio", $.extend( {
 					.filter( "[for='" + $.mobile.path.hashToSelector( input[0].id ) + "']" )
 					.first(),
 			inputtype = input[0].type,
-			checkedState = inputtype + "-on",
-			uncheckedState = inputtype + "-off",
-			checkedClass = "ui-" + checkedState,
-			uncheckedClass = "ui-" + uncheckedState;
+			checkedClass = "ui-" + inputtype + "-on",
+			uncheckedClass = "ui-" + inputtype + "-off";
 
 		if ( inputtype !== "checkbox" && inputtype !== "radio" ) {
 			return;
 		}
 
-		if ( this.element[0].disabled ){
+		if ( this.element[0].disabled ) {
 			this.options.disabled = true;
 		}
 
@@ -70,9 +68,7 @@ $.widget( "mobile.checkboxradio", $.extend( {
 			parentLabel: parentLabel,
 			inputtype: inputtype,
 			checkedClass: checkedClass,
-			uncheckedClass: uncheckedClass,
-			checkedicon: checkedState,
-			uncheckedicon: uncheckedState
+			uncheckedClass: uncheckedClass
 		});
 
 		if ( !this.options.enhanced ) {
@@ -98,7 +94,7 @@ $.widget( "mobile.checkboxradio", $.extend( {
 	_enhance: function() {
 		this.label.addClass( "ui-btn ui-corner-all");
 
-		if( this.parentLabel.length > 0 ){
+		if ( this.parentLabel.length > 0 ) {
 			this.input.add( this.label ).wrapAll( this._wrapper() );
 		} else {
 			//this.element.replaceWith( this.input.add( this.label ).wrapAll( this._wrapper() ) );
@@ -213,21 +209,62 @@ $.widget( "mobile.checkboxradio", $.extend( {
 		this.refresh();
 	},
 
-	refresh: function() {
-		var input = this.element[ 0 ],
-			active = " " + $.mobile.activeBtnClass,
-			hasIcon = ( this.element.parents( ".ui-controlgroup-horizontal" ).length === 0 ),
-			checkedClass = this.checkedClass + ( hasIcon ? "" : active ),
-			label = this.label;
+	// Is the widget supposed to display an icon?
+	_hasIcon: function() {
+		var controlgroup, controlgroupWidget,
+			controlgroupConstructor = $.mobile.controlgroup;
 
-		label
-			.toggleClass( "ui-icon-" + this.checkedicon, input.checked )
-			.toggleClass( "ui-icon-" + this.uncheckedicon, !input.checked );
-		if ( input.checked ) {
-			label.removeClass( this.uncheckedClass + active ).addClass( checkedClass );
-		} else {
-			label.removeClass( checkedClass ).addClass( this.uncheckedClass );
+		// If the controlgroup widget is defined ... 
+		if ( controlgroupConstructor ) {
+			controlgroup = this.element.closest(
+				":mobile-controlgroup," +
+				controlgroupConstructor.prototype.initSelector );
+
+			// ... and the checkbox is in a controlgroup ...
+			if ( controlgroup.length > 0 ) {
+
+				// ... look for a controlgroup widget instance, and ...
+				controlgroupWidget = $.data( controlgroup[ 0 ], "mobile-controlgroup" );
+
+				// ... if found, decide based on the option value, ...
+				return ( ( controlgroupWidget ? controlgroupWidget.options.type :
+
+					// ... otherwise decide based on the "type" data attribute.
+					controlgroup.attr( "data-" + $.mobile.ns + "type" ) ) !== "horizontal" );
+			}
 		}
+
+		// Normally, the widget displays an icon.
+		return true;
+	},
+
+	refresh: function() {
+		var hasIcon = this._hasIcon(),
+			isChecked = this.element[ 0 ].checked,
+			active = $.mobile.activeBtnClass,
+			iconposClass = "ui-btn-icon-" + this.options.iconpos,
+			addClasses = [],
+			removeClasses = [];
+
+		if ( hasIcon ) {
+			removeClasses.push( active );
+			addClasses.push( iconposClass );
+		} else {
+			removeClasses.push( iconposClass );
+			( isChecked ? addClasses : removeClasses ).push( active );
+		}
+
+		if ( isChecked ) {
+			addClasses.push( this.checkedClass );
+			removeClasses.push( this.uncheckedClass );
+		} else {
+			addClasses.push( this.uncheckedClass );
+			removeClasses.push( this.checkedClass );
+		}
+
+		this.label
+			.addClass( addClasses.join( " " ) )
+			.removeClass( removeClasses.join( " " ) );
 	},
 
 	widget: function() {
@@ -236,14 +273,16 @@ $.widget( "mobile.checkboxradio", $.extend( {
 
 	_setOptions: function( options ) {
 		var label = this.label,
-			currentOptions = this.options;
+			currentOptions = this.options,
+			outer = this.widget(),
+			hasIcon = this._hasIcon();
 
 		if ( options.disabled !== undefined ) {
 			this.input.prop( "disabled", !!options.disabled );
-			this.widget().toggleClass( "ui-state-disabled", !!options.disabled );
+			outer.toggleClass( "ui-state-disabled", !!options.disabled );
 		}
 		if ( options.mini !== undefined ) {
-			label.parent().toggleClass( "ui-mini", !!options.mini );
+			outer.toggleClass( "ui-mini", !!options.mini );
 		}
 		if ( options.theme !== undefined ) {
 			label
@@ -251,14 +290,13 @@ $.widget( "mobile.checkboxradio", $.extend( {
 				.addClass( "ui-btn-" + options.theme );
 		}
 		if ( options.wrapperClass !== undefined ) {
-			this.widget()
+			outer
 				.removeClass( currentOptions.wrapperClass )
 				.addClass( options.wrapperClass );
 		}
-		if ( options.iconpos !== undefined &&
-			( this.element.parents( "[data-" + $.mobile.ns + "type='horizontal']" ).length === 0 ) ) {
+		if ( options.iconpos !== undefined && hasIcon ) {
 			label.removeClass( "ui-btn-icon-" + currentOptions.iconpos ).addClass( "ui-btn-icon-" + options.iconpos );
-		} else if ( this.element.parents( "[data-" + $.mobile.ns + "type='horizontal']" ).length !== 0 ){
+		} else if ( !hasIcon ) {
 			label.removeClass( "ui-btn-icon-" + currentOptions.iconpos );
 		}
 		this._super( options );

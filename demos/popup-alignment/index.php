@@ -54,19 +54,19 @@ $.mobile.document.on( "slidestop", function() {
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
 		<div data-demo-html="true" data-demo-js="#extension" data-demo-css="#alignment-example-style">
 			<div data-role="popup" id="alignment-example" class="ui-content">
 				<form data-role="fieldset">
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
 						<label for="xalign">X Alignment</label>
 						<input type="range" id="xalign" name="xalign" value="0.5" min="-1" max="2" step="0.5"></input>
 					</div>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
 						<label for="yalign">Y Alignment</label>
 						<input type="range" id="yalign" name="yalign" value="0.5" min="-1" max="2" step="0.5"></input>
 					</div>
@@ -82,7 +82,7 @@ $.mobile.document.on( "slidestop", function() {
 
 <?php include( '../jqm-panels.php' ); ?>
 
-	<a href="#alignment-example" id="open-alignment-example" data-rel="popup" data-role="button" data-inline="true">Open</a>
+	<a href="#alignment-example" id="open-alignment-example" data-rel="popup" role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Open</a>
 </div><!-- /page -->
 </body>
 </html>

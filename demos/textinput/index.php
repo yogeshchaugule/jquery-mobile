@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Textinput - jQuery Mobile Demos</title>
-    <link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
     <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -18,8 +18,8 @@
     <div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
     </div><!-- /header -->
 
     <div data-role="content" class="jqm-content">
@@ -314,22 +314,22 @@
 
         <div data-demo-html="true">
         <form>
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                  <label for="text-12">Text input:</label>
                  <input type="text" name="text-12" id="text-12" value="">
             </div>
 
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                  <label for="text-13">Text input: data-clear-btn="true"</label>
                  <input type="text" data-clear-btn="true" name="text-13" id="text-13" value="">
             </div>
 
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                  <label for="search-8">Search:</label>
                  <input type="search" name="search-8" id="search-8" value="">
             </div>
 
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                 <label for="textarea-12">Textarea:</label>
                 <textarea cols="40" rows="8" name="textarea-12" id="textarea-12"></textarea>
             </div>
@@ -340,22 +340,22 @@
 
         <div data-demo-html="true">
         <form>
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                  <label for="text-14">Text input:</label>
                  <input type="text" data-mini="true" name="text-14" id="text-14" value="">
             </div>
 
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
                  <label for="text-15">Text input: data-clear-btn="true"</label>
                  <input type="text" data-clear-btn="true" data-mini="true" name="text-15" id="text-15" value="">
             </div>
 
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
              <label for="search-9">Search:</label>
              <input type="search" data-mini="true" name="search-9" id="search-9" value="">
             </div>
 
-            <div data-role="fieldcontain">
+            <div class="ui-field-contain">
             <label for="textarea-14">Textarea:</label>
             <textarea data-mini="true" cols="40" rows="8" name="textarea-14" id="textarea-14"></textarea>
             </div>
@@ -366,22 +366,22 @@
 
         <div data-demo-html="true">
         <form>
-            <div data-role="fieldcontain" class="ui-hide-label">
+            <div class="ui-field-contain ui-hide-label">
                  <label for="text-16">Text input:</label>
                  <input type="text" name="text-16" id="text-16" value="">
             </div>
 
-            <div data-role="fieldcontain" class="ui-hide-label">
+            <div class="ui-field-contain ui-hide-label">
                  <label for="text-17">Text input: data-clear-btn="true"</label>
                  <input type="text" data-clear-btn="true" name="text-17" id="text-17" value="">
             </div>
 
-            <div data-role="fieldcontain" class="ui-hide-label">
+            <div class="ui-field-contain ui-hide-label">
              <label for="search-10">Search:</label>
              <input type="search" name="search-110" id="search-10" value="">
             </div>
 
-            <div data-role="fieldcontain" class="ui-hide-label">
+            <div class="ui-field-contain ui-hide-label">
             <label for="textarea-16">Textarea:</label>
             <textarea cols="40" rows="8" name="textarea-16" id="textarea-16"></textarea>
             </div>

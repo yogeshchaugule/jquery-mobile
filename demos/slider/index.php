@@ -11,6 +11,15 @@
 	<script src="../../js/jquery.js"></script>
 	<script src="../_assets/js/"></script>
 	<script src="../../js/"></script>
+    <style id="full-width-slider">
+        /* Hide the number input */
+        .full-width-slider input {
+            display: none;
+        }
+        .full-width-slider .ui-slider-track {
+            margin-left: 15px;
+        }
+    </style>
 </head>
 <body>
 <div data-role="page" class="jqm-demos" data-quicklinks="true">
@@ -18,8 +27,8 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
@@ -96,7 +105,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
                         <label for="slider-7">Slider:</label>
                         <input type="range" name="slider-7" id="slider-7" min="0" max="100" value="50">
 					</div>
@@ -107,7 +116,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain">
+					<div class="ui-field-contain">
                         <label for="slider-8">Slider:</label>
                         <input type="range" name="slider-8" id="slider-8" data-mini="true" min="0" max="100" value="50">
 					</div>
@@ -118,7 +127,7 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain" class="ui-hide-label">
+					<div class="ui-field-contain ui-hide-label">
                         <label for="slider-9">Slider:</label>
                         <input type="range" name="slider-9" id="slider-9" min="0" max="100" value="50">
 					</div>
@@ -129,11 +138,22 @@
 
                 <div data-demo-html="true">
 				<form>
-					<div data-role="fieldcontain" class="ui-hide-label">
+					<div class="ui-field-contain ui-hide-label">
                         <label for="slider-11">Slider:</label>
                         <input type="range" name="slider-11" id="slider-11" data-mini="true" min="0" max="100" value="50">
 					</div>
 				</form>
+                </div><!-- /demo-html -->
+
+                <h2>Full width slider, no input</h2>
+
+                <p>Here we show how you can hide the number input and make the slider full width with custom CSS.</p>
+
+                <div data-demo-html="true" data-demo-css="#full-width-slider">
+                <form class="full-width-slider">
+                    <label for="slider-12" class="ui-hidden-accessible">Slider:</label>
+                    <input type="range" name="slider-12" id="slider-12" min="0" max="100" value="50">
+                </form>
                 </div><!-- /demo-html -->
 
 	</div><!-- /content -->

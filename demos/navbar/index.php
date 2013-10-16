@@ -28,16 +28,15 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
 
 		<h1>Navbar</h1>
 
-		<p>jQuery Mobile has a very basic navbar widget that is useful for providing up to 5 buttons with optional icons in a bar.
-			</p>
+		<p>jQuery Mobile has a very basic navbar widget that is useful for providing up to 5 buttons with optional icons in a bar.</p>
 
 		<h2>Navbar basics</h2>
 
@@ -163,7 +162,7 @@
 
 		<h2>Persistent</h2>
 
-		<p>The <a href="../fixed-toolbars/footer-persist-a.php">persistent navbar</a> variation is designed to work more like a tab bar that stays fixed as you navigate across pages. To set an item to the active state upon initialization of the navbar, add <code>class="ui-btn-active"</code> to the corresponding anchor in your markup. Additionally add a class of <code>ui-state-persist</code> to make the framework restore the active state each time the page is shown while it exists in the DOM.</p>
+		<p>The <a href="../toolbar-fixed-persistent/">persistent navbar</a> variation is designed to work more like a tab bar that stays fixed as you navigate across pages. To set an item to the active state upon initialization of the navbar, add <code>class="ui-btn-active"</code> to the corresponding anchor in your markup. Additionally add a class of <code>ui-state-persist</code> to make the framework restore the active state each time the page is shown while it exists in the DOM.</p>
 
 		<h2>Icons</h2>
 

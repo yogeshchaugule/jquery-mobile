@@ -18,8 +18,8 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
@@ -129,12 +129,12 @@
 
 		<h2>Grid solo class</h2>
             
-		<p>The framework adds left and right margin to buttons in a grid (one exception: 100% width button elements). For a single button you can use a container with class <code>ui-grid-solo</code> and wrap the button in a div with class <code>ui-block-a</code> like the example below. This way the button will get the same margin. View more examples of <a href="grid-buttons.php" data-ajax="false">buttons in grids</a>.</p>
+		<p>The framework adds left and right margin to buttons in a grid (one exception: 100% width button elements). For a single button you can use a container with class <code>ui-grid-solo</code> and wrap the button in a div with class <code>ui-block-a</code> like the example below. This way the button will get the same margin. View more examples of <a href="../grids-buttons/" data-ajax="false">buttons in grids</a>.</p>
 
 			<div data-demo-html="true">
 				<div class="ui-grid-a">
-					<div class="ui-block-a"><a data-role="button">Previous</a></div>
-					<div class="ui-block-b"><a data-role="button">Next</a></div>
+					<div class="ui-block-a"><a role="button" class="ui-shadow ui-btn ui-corner-all">Previous</a></div>
+					<div class="ui-block-b"><a role="button" class="ui-shadow ui-btn ui-corner-all">Next</a></div>
 				</div>
 
 				<div class="ui-grid-solo">
@@ -147,7 +147,7 @@
 
 		<p>It's straightforward to take the standard grids and make them responsive by stacking the grid blocks at narrow widths. Since we just want to override the floats and widths of the standard grid styles <em>below</em> a single breakpoint, use a <code>max-width</code> breakpoint to only apply the stacked styling as an override.</p>
 
-		<p>We recommend adding a class (ex: <code>my-breakpoint</code>) to scope the styles for the media query so it can be applied selectively. From this basic start, you can customize the appearance further or even add additional breakpoints. See an example of a <a href="grid-custom.php" data-ajax="false">custom responsive grid</a>.</p>
+		<p>We recommend adding a class (ex: <code>my-breakpoint</code>) to scope the styles for the media query so it can be applied selectively. From this basic start, you can customize the appearance further or even add additional breakpoints. See an example of a <a href="../grids-custom-responsive/" data-ajax="false">custom responsive grid</a>.</p>
 
 <pre><code>
 /* stack all grids below 40em (640px) */

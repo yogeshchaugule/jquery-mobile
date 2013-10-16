@@ -32,7 +32,7 @@ $.widget = (function( orig ) {
 $.extend( $.widget, originalWidget );
 
 // For backcompat remove in 1.5
-$.mobile.document.on( "create", function( event ){
+$.mobile.document.on( "create", function( event ) {
 	$( event.target ).enhanceWithin();
 });
 
@@ -71,12 +71,12 @@ $.widget( "mobile.page", {
 
 		this.element.enhanceWithin();
 		// Dialog widget is deprecated in 1.4 remove this in 1.5
-		if( $.mobile.getAttribute( this.element[0], "role" ) === "dialog" && $.mobile.dialog ){
+		if ( $.mobile.getAttribute( this.element[0], "role" ) === "dialog" && $.mobile.dialog ) {
 			this.element.dialog();
 		}
 	},
 
-	_enhance: function (){
+	_enhance: function () {
 		var attrPrefix = "data-" + $.mobile.ns,
 			self = this;
 
@@ -110,14 +110,18 @@ $.widget( "mobile.page", {
 			page.is( ":jqmData(external-page='true')" ) ) {
 
 			// TODO use _on - that is, sort out why it doesn't work in this case
-			page.bind( "pagehide.remove", callback || function(/* e */) {
-				var $this = $( this ),
-					prEvent = new $.Event( "pageremove" );
+			page.bind( "pagehide.remove", callback || function( e, data ) {
 
-				$this.trigger( prEvent );
+				//check if this is a same page transition and if so don't remove the page
+				if( !data.samePage ){
+					var $this = $( this ),
+						prEvent = new $.Event( "pageremove" );
 
-				if ( !prEvent.isDefaultPrevented() ) {
-					$this.removeWithDependents();
+					$this.trigger( prEvent );
+
+					if ( !prEvent.isDefaultPrevented() ) {
+						$this.removeWithDependents();
+					}
 				}
 			});
 		}

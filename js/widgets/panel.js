@@ -105,12 +105,11 @@ $.widget( "mobile.panel", {
 	},
 	
 	_getWrapper: function() {
-		var wrapper = this._page().find( "." + this.options.classes.pageWrapper ),
-			animateClass = ( $.support.cssTransform3d && !!this.options.animate ) ? " " + this.options.classes.animate : "";
+		var wrapper = this._page().find( "." + this.options.classes.pageWrapper );
 
 		if ( wrapper.length === 0 ) {
-			wrapper = this._page().children( ".ui-header:not(:jqmData(position='fixed')), .ui-content:not(:jqmData(role='popup')), .ui-footer:not(:jqmData(position='fixed'))" )
-				.wrapAll( "<div class='" + this.options.classes.pageWrapper + animateClass + "' /></div>" )
+			wrapper = this._page().children( ".ui-header:not(.ui-header-fixed), .ui-content:not(.ui-popup), .ui-footer:not(.ui-footer-fixed)" )
+				.wrapAll( "<div class='" + this.options.classes.pageWrapper + "'></div>" )
 				.parent();
 		}
 
@@ -118,8 +117,8 @@ $.widget( "mobile.panel", {
 	},
 	
 	_getFixedToolbars: function() {
-		var extFixedToolbars = $( "body" ).children( ".ui-header:jqmData(position='fixed'), .ui-footer:jqmData(position='fixed')" ),
-			intFixedToolbars = this._page().find( ".ui-header:jqmData(position='fixed'), .ui-footer:jqmData(position='fixed')" ),
+		var extFixedToolbars = $( "body" ).children( ".ui-header-fixed, .ui-footer-fixed" ),
+			intFixedToolbars = this._page().find( ".ui-header-fixed, .ui-footer-fixed" ),
 			fixedToolbars = extFixedToolbars.add( intFixedToolbars ).addClass( this.options.classes.pageFixedToolbar );
 
 		return fixedToolbars;
@@ -212,7 +211,7 @@ $.widget( "mobile.panel", {
 		
 	},
 
-	_handleClick: function( e ){
+	_handleClick: function( e ) {
 		if (  e.currentTarget.href.split( "#" )[ 1 ] === this._panelID && this._panelID !== undefined ) {
 			e.preventDefault();
 			var link = $( e.target );
@@ -423,12 +422,17 @@ $.widget( "mobile.panel", {
 	_transitionEndEvents: "webkitTransitionEnd oTransitionEnd otransitionend transitionend msTransitionEnd",
 
 	_destroy: function() {
-		var o = this.options,
-			multiplePanels = ( $( "body > :mobile-panel" ).length + $.mobile.activePage.find( ":mobile-panel" ).length ) > 1;
+		var otherPanels,
+		o = this.options,
+		multiplePanels = ( $( "body > :mobile-panel" ).length + $.mobile.activePage.find( ":mobile-panel" ).length ) > 1;
 
 		if ( o.display !== "overlay" ) {
-			// Destroy the wrapper even if there are still other panels, because we don't know if they use a wrapper
-			this._wrapper().children().unwrap();
+
+			//  remove the wrapper if not in use by another panel
+			otherPanels = $( "body > :mobile-panel" ).add( $.mobile.activePage.find( ":mobile-panel" ) );
+			if ( otherPanels.not( ".ui-panel-display-overlay" ).not( this.element ).length === 0 ) {
+				this._wrapper().children().unwrap();
+			}
 
 			if ( this._open ) {
 				

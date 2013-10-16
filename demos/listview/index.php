@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Listviews - jQuery Mobile Demos</title>
+	<title>Listview - jQuery Mobile Demos</title>
 	<link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
@@ -25,13 +25,13 @@
 	<div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 	</div><!-- /header -->
 
 	<div data-role="content" class="jqm-content">
 
-		<h1>Listviews</h1>
+		<h1>Listview</h1>
 
 		<p>A listview is coded as a simple unordered list (ul) or ordered list (ol) with a <code> data-role="listview"</code> attribute and has a wide range of features.
 			</p>
@@ -182,17 +182,17 @@
 			<div data-demo-html="true">
 				<ul data-role="listview" data-inset="true">
 					<li><a href="#">
-						<img src="../_assets/img/album-bb.jpg" />
+						<img src="../_assets/img/album-bb.jpg">
 					<h2>Broken Bells</h2>
 					<p>Broken Bells</p></a>
 					</li>
 					<li><a href="#">
-						<img src="../_assets/img/album-hc.jpg" />
+						<img src="../_assets/img/album-hc.jpg">
 					<h2>Warning</h2>
 					<p>Hot Chip</p></a>
 					</li>
 					<li><a href="#">
-						<img src="../_assets/img/album-p.jpg" />
+						<img src="../_assets/img/album-p.jpg">
 					<h2>Wolfgang Amadeus Phoenix</h2>
 					<p>Phoenix</p></a>
 					</li>
@@ -204,19 +204,19 @@
 			<div data-demo-html="true">
 				<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
 					<li><a href="#">
-						<img src="../_assets/img/album-bb.jpg" />
+						<img src="../_assets/img/album-bb.jpg">
 					<h2>Broken Bells</h2>
 					<p>Broken Bells</p></a>
 						<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
 					</li>
 					<li><a href="#">
-						<img src="../_assets/img/album-hc.jpg" />
+						<img src="../_assets/img/album-hc.jpg">
 					<h2>Warning</h2>
 					<p>Hot Chip</p></a>
 						<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
 					</li>
 					<li><a href="#">
-						<img src="../_assets/img/album-p.jpg" />
+						<img src="../_assets/img/album-p.jpg">
 					<h2>Wolfgang Amadeus Phoenix</h2>
 					<p>Phoenix</p></a>
 						<a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
@@ -226,8 +226,8 @@
 				<div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
 					<h3>Purchase Album?</h3>
 				<p>Your download will begin immediately on your mobile device when you purchase.</p>
-					<a href="index.html" data-role="button" data-rel="back" data-theme="b" data-icon="check" data-inline="true" data-mini="true">Buy: $10.99</a>
-					<a href="index.html" data-role="button" data-rel="back" data-inline="true" data-mini="true">Cancel</a>
+					<a href="index.html" role="button" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Buy: $10.99</a>
+					<a href="index.html" role="button" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
 				</div>
 			</div><!--/demo-html -->
 
@@ -254,7 +254,7 @@
 					<li><a href="index.html">
 					<h2>Avery Walker</h2>
 					<p><strong>Re: Dinner Tonight</strong></p>
-					<p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait! </p>
+					<p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
 						<p class="ui-li-aside"><strong>4:48</strong>PM</p>
 					</a></li>
 				</ul>
@@ -307,27 +307,27 @@
 			<div data-demo-html="true">
 				<form>
 					<ul data-role="listview" data-inset="true">
-                        <li data-role="fieldcontain">
+                        <li class="ui-field-contain">
                             <label for="name2">Text Input:</label>
                             <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
                         </li>
-                        <li data-role="fieldcontain">
+                        <li class="ui-field-contain">
                             <label for="textarea2">Textarea:</label>
                         <textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
                         </li>
-                        <li data-role="fieldcontain">
+                        <li class="ui-field-contain">
                             <label for="flip2">Flip switch:</label>
                             <select name="flip2" id="flip2" data-role="slider">
                                 <option value="off">Off</option>
                                 <option value="on">On</option>
                             </select>
                         </li>
-                        <li data-role="fieldcontain">
+                        <li class="ui-field-contain">
                             <label for="slider2">Slider:</label>
                             <input type="range" name="slider2" id="slider2" value="0" min="0" max="100" data-highlight="true">
                         </li>
 
-                        <li data-role="fieldcontain">
+                        <li class="ui-field-contain">
                             <label for="select-choice-1" class="select">Choose shipping method:</label>
                             <select name="select-choice-1" id="select-choice-1">
                                 <option value="standard">Standard: 7 day</option>
@@ -338,8 +338,8 @@
                         </li>
                         <li class="ui-body ui-body-b">
                             <fieldset class="ui-grid-a">
-                                    <div class="ui-block-a"><button type="submit" data-theme="a">Cancel</button></div>
-                                    <div class="ui-block-b"><button type="submit" data-theme="a">Submit</button></div>
+                                    <div class="ui-block-a"><button type="submit" class="ui-btn ui-corner-all ui-btn-a">Cancel</button></div>
+                                    <div class="ui-block-b"><button type="submit" class="ui-btn ui-corner-all ui-btn-a">Submit</button></div>
                             </fieldset>
                         </li>
 					</ul>
@@ -406,19 +406,19 @@
 					<h2>Thumbnails and split button</h2>
 						<ul data-role="listview" data-split-icon="gear" data-split-theme="a">
 							<li><a href="index.html">
-								<img src="../_assets/img/album-bb.jpg" />
+								<img src="../_assets/img/album-bb.jpg">
 								<h3>Broken Bells</h3>
 							<p>Broken Bells</p>
 								</a><a href="lists-split-purchase.html" data-rel="dialog" data-transition="slideup">Purchase album
 							</a></li>
 							<li><a href="index.html">
-								<img src="../_assets/img/album-hc.jpg" />
+								<img src="../_assets/img/album-hc.jpg">
 								<h3>Warning</h3>
 							<p>Hot Chip</p>
 							</a><a href="lists-split-purchase.html" data-rel="dialog" data-transition="slideup">Purchase album
 							</a></li>
 							<li><a href="index.html">
-								<img src="../_assets/img/album-p.jpg" />
+								<img src="../_assets/img/album-p.jpg">
 								<h3>Wolfgang Amadeus Phoenix</h3>
 							<p>Phoenix</p>
 								</a><a href="lists-split-purchase.html" data-rel="dialog" data-transition="slideup">Purchase album

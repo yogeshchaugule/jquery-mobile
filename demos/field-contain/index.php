@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Field containers - jQuery Mobile Demos</title>
-    <link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
     <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -18,13 +18,17 @@
     <div data-role="header" class="jqm-header">
         <h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-shadow ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right ui-shadow" role="button">Search</a>
     </div><!-- /header -->
     
 	<div data-role="content" class="jqm-content">
     
     	<h1>Field containers</h1>
+
+    	<p>Add class <code>ui-field-contain</code> to a wrapper of a form widget and its <code>label</code>.</p>
+
+    	<p><strong>Note:</strong> <code>data-role="fieldcontain"</code> has been deprecated in 1.4 and will be removed in 1.5.<p>
     
         <form action="#" method="get">
     
@@ -76,9 +80,9 @@
                 <div class="ui-field-contain">
                     <fieldset data-role="controlgroup">
                         <legend>Vertical controlgroup, buttons:</legend>
-                        <button data-icon="home" data-iconpos="right">One</button>
+                        <button class="ui-shadow ui-btn ui-corner-all ui-icon-home ui-btn-icon-right">One</button>
                         <input type="button" data-icon="back" data-iconpos="right" value="Two">
-                        <a href="#" data-role="button" data-icon="grid" data-iconpos="right">Three</a>
+                        <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">Three</a>
                     </fieldset>
                 </div>
             </div><!--/demo-html -->
@@ -87,9 +91,9 @@
                 <div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal">
                         <legend>Horizontal controlgroup, buttons:</legend>
-                        <button data-icon="home" data-iconpos="right">One</button>
+                        <button class="ui-shadow ui-btn ui-corner-all ui-icon-home ui-btn-icon-right">One</button>
                         <input type="button" data-icon="back" data-iconpos="right" value="Two">
-                        <a href="#" data-role="button" data-icon="grid" data-iconpos="right">Three</a>
+                        <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">Three</a>
                     </fieldset>
                 </div>
             </div><!--/demo-html -->
@@ -150,8 +154,8 @@
                 <div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal">
                         <legend>Horizontal controlgroup, mixed:</legend>
-                        <a href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Link</a>
-                        <button data-icon="grid" data-iconpos="notext">Button</button>
+                        <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-icon-arrow-r ui-btn-icon-right">Link</a>
+                        <button class="ui-shadow ui-btn ui-corner-all ui-icon-grid ui-btn-icon-notext">Button</button>
                         <label for="select-v-1e">Select</label>
                         <select name="select-v-1e" id="select-v-1e">
                             <option value="#">One</option>
@@ -248,7 +252,7 @@
             <div data-demo-html="true">
                 <div class="ui-field-contain">
                     <label for="submit-1">Send:</label>
-                    <button type="submit" id="submit-1">Submit</button>
+                    <button type="submit" id="submit-1" class="ui-shadow ui-btn ui-corner-all">Submit</button>
                 </div>
             </div><!--/demo-html -->
     
@@ -306,9 +310,9 @@
                 <div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <legend>Vertical controlgroup, buttons:</legend>
-                        <button data-icon="home" data-iconpos="right">One</button>
+                        <button class="ui-shadow ui-btn ui-corner-all ui-icon-home ui-btn-icon-right">One</button>
                         <input type="button" data-icon="back" data-iconpos="right" value="Two">
-                        <a href="#" data-role="button" data-icon="grid" data-iconpos="right">Three</a>
+                        <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">Three</a>
                     </fieldset>
                 </div>
             </div><!--/demo-html -->
@@ -317,9 +321,9 @@
                 <div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Horizontal controlgroup, buttons:</legend>
-                        <button data-icon="home" data-iconpos="right">One</button>
+                        <button class="ui-shadow ui-btn ui-corner-all ui-icon-home ui-btn-icon-right">One</button>
                         <input type="button" data-icon="back" data-iconpos="right" value="Two">
-                        <a href="#" data-role="button" data-icon="grid" data-iconpos="right">Three</a>
+                        <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-icon-grid ui-btn-icon-right">Three</a>
                     </fieldset>
                 </div>
             </div><!--/demo-html -->
@@ -380,8 +384,8 @@
                 <div class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Horizontal controlgroup, mixed:</legend>
-                        <a href="#" data-role="button" data-icon="arrow-r" data-iconpos="right">Link</a>
-                        <button data-icon="grid" data-iconpos="notext">Button</button>
+                        <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-icon-arrow-r ui-btn-icon-right">Link</a>
+                        <button class="ui-shadow ui-btn ui-corner-all ui-icon-grid ui-btn-icon-notext">Button</button>
                         <label for="select-v-5e">Select</label>
                         <select name="select-v-5e" id="select-v-5e">
                             <option value="#">One</option>
@@ -478,7 +482,7 @@
             <div data-demo-html="true">
                 <div class="ui-field-contain">
                     <label for="submit-5">Send:</label>
-                    <button type="submit" id="submit-5" data-mini="true">Submit</button>
+                    <button type="submit" id="submit-5" class="ui-shadow ui-btn ui-corner-all ui-mini">Submit</button>
                 </div>
             </div><!--/demo-html -->
     

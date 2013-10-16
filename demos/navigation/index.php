@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Navigation - jQuery Mobile Demos</title>
-	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+	<link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
 	<link rel="stylesheet" href="../_assets/css/jqm-demos.css">
 	<link rel="shortcut icon" href="../favicon.ico">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -19,8 +19,8 @@
     <div data-role="header" class="jqm-header">
 		<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+        <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+        <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
     </div><!-- /header -->
 
     <div data-role="content" class="jqm-content">
@@ -76,7 +76,7 @@ $( window ).on( "navigate", function( event, data ){
 
 		<h2>Event Example </h2>
 
-		<p>jQuery Mobile provides the <code>navigate</code> event as a wrapper for both <code>hashchange</code> and <code>popstate</code>. That is, where a binding to both events would be required to support browsers with and without <code>popstate</code> only one binding to <code>navigate</code> is necessary. In this example, altering the hash will trigger <code>popstate</code> or <code>hashchange</code> event depending on the browser, but only a single <code>navigate</code> binding is necessary. Make sure to use the back button after alterting the hash to see that the event is fired in both cases.</p>
+		<p>jQuery Mobile provides the <code>navigate</code> event as a wrapper for both <code>hashchange</code> and <code>popstate</code>. That is, where a binding to both events would be required to support browsers with and without <code>popstate</code> only one binding to <code>navigate</code> is necessary. In this example, altering the hash will trigger the <code>popstate</code> or <code>hashchange</code> event depending on the browser, but only a single <code>navigate</code> binding is necessary. Make sure to use the back button after alterting the hash to see that the event is fired in both cases.</p>
 
 <p><em>Note: when viewing the console output, some browsers (eg, Chrome) fire a popstate on the initial page load</em></p>
 
@@ -93,7 +93,7 @@ $( "#event-example" ).click(function( event ) {
 });
 </code></pre>
 
-    <a href="#" id="event-example" data-role="button">Event Example</a>
+    <a href="#" id="event-example" role="button" class="ui-shadow ui-btn ui-corner-all">Event Example</a>
 
 		<h2>Method Example </h2>
 
@@ -127,7 +127,7 @@ $( "#method-example" ).click(function( event ) {
 </code>
     </pre>
 
-    <a href="#" id="method-example" data-role="button">Method Example</a>
+    <a href="#" id="method-example" role="button" class="ui-shadow ui-btn ui-corner-all">Method Example</a>
 	</div><!-- /content -->
 
 	<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">

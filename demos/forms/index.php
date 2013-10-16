@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Form elements - jQuery Mobile Demos</title>
-		<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.css">
+		<link rel="stylesheet" href="../../css/themes/default/jquery.mobile.css">
 		<link rel="stylesheet" href="../_assets/css/jqm-demos.css">
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -18,8 +18,8 @@
 		<div data-role="header" class="jqm-header">
 			<h2><a href="../" title="jQuery Mobile Demos home"><img src="../_assets/img/jquery-logo.png" alt="jQuery Mobile"></a></h2>
 		<p>Demos <span class="jqm-version"></span></p>
-			<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
-			<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+			<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left" role="button">Menu</a>
+			<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right" role="button">Search</a>
 			</div><!-- /header -->
 
     <div data-role="content" class="jqm-content">
@@ -37,44 +37,44 @@
 
 		<p>Buttons are used within a wide range of other plugins. The button markup is flexible and can be created from links or form buttons. Learn more about <a href="../button-markup/">button markup</a> and <a href="../button-markup/">input buttons</a>.</p>
         <div data-demo-html="true">
-            <a href="#" data-role="button">Link button</a>
-            <button>Button element</button>
-            <input type="button" value="Button element" data-icon="delete" data-theme="a" />
+            <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all">Link button</a>
+            <button class="ui-shadow ui-btn ui-corner-all">Button element</button>
+            <input type="button" value="Button element" data-icon="delete" data-theme="a">
         </div><!-- /demo-html -->
 
         <p>Inline buttons</p>
         <div data-demo-html="true">
-            <a href="#" data-role="button" data-inline="true" data-icon="star">Inline + icon</a>
-            <a href="#" data-role="button" data-inline="true" data-theme="b" data-mini="true">Mini + theme</a>
-            <a href="#" data-role="button" data-inline="true" data-icon="plus" data-iconpos="notext" data-theme="b" data-mini="true">icon only button</a>
+            <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-star">Inline + icon</a>
+            <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-b ui-mini">Mini + theme</a>
+            <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-notext ui-btn-b ui-mini">icon only button</a>
         </div><!-- /demo-html -->
 
         <p>Horizontal grouped buttons</p>
         <div data-demo-html="true">
             <div data-role="controlgroup" data-type="horizontal" data-mini="true">
-                <a href="#" data-role="button" data-icon="plus" data-theme="b">Add</a>
-                <a href="#" data-role="button" data-icon="delete" data-theme="b">Delete</a>
-                <a href="#" data-role="button" data-icon="grid" data-theme="b">More</a>
+                <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus ui-btn-b">Add</a>
+                <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-delete ui-btn-b">Delete</a>
+                <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-grid ui-btn-b">More</a>
             </div>
         </div><!-- /demo-html -->
 
         <h2>Sliders</h2>
 
-		<p>Sliders are used to enter numeric values along a numeric continuum by dragging a handle or entering in a value. Learn more about <a href="../sliders/" data-ajax="false">sliders</a>.</p>
+		<p>Sliders are used to enter numeric values along a numeric continuum by dragging a handle or entering in a value. Learn more about <a href="../slider/" data-ajax="false">sliders</a>.</p>
 
         <div data-demo-html="true">
             <label for="slider">Slider:</label>
-            <input type="range" name="slider" id="slider" value="50" min="0" max="100" />
+            <input type="range" name="slider" id="slider" value="50" min="0" max="100">
         </div><!-- /demo-html -->
 
         <div data-demo-html="true">
             <label for="slider-fill">Slider with fill and step of 50:</label>
-            <input type="range" name="slider-fill" id="slider-fill" value="60" min="0" max="1000" step="50" data-highlight="true" />
+            <input type="range" name="slider-fill" id="slider-fill" value="60" min="0" max="1000" step="50" data-highlight="true">
         </div><!-- /demo-html -->
 
         <div data-demo-html="true">
             <label for="slider-fill-mini">Slider with fill, mini, track theme:</label>
-            <input type="range" name="slider-fill-mini" id="slider-fill-mini" value="40" min="0" max="100" data-mini="true" data-highlight="true" data-theme="b" data-track-theme="b" />
+            <input type="range" name="slider-fill-mini" id="slider-fill-mini" value="40" min="0" max="100" data-mini="true" data-highlight="true" data-theme="b" data-track-theme="b">
         </div><!-- /demo-html -->
 
         <h2>Range slider</h2>
@@ -105,7 +105,7 @@
 
         <h2>Flip switch</h2>
 
-		<p>Flip switches are used for boolean style inputs like true/false or on/off in a compact UI element. Learn more about <a href="../sliders/switch.php" data-ajax="false">flip switches</a>.</p>
+		<p>Flip switches are used for boolean style inputs like true/false or on/off in a compact UI element. Learn more about <a href="../slider-flipswitch/" data-ajax="false">flip switches</a>.</p>
 
         <div data-demo-html="true">
             <label for="slider2">Flip switch:</label>
@@ -125,21 +125,21 @@
 
         <h2>Checkboxes</h2>
 
-		<p>Checkboxes are used to provide a list of options where more than one can be selected. Learn more about <a href="../checkbox/">checkboxes</a>.</p>
+		<p>Checkboxes are used to provide a list of options where more than one can be selected. Learn more about <a href="../checkboxradio-checkbox/">checkboxes</a>.</p>
 
         <div data-demo-html="true">
             <fieldset data-role="controlgroup">
                 <legend>Checkboxes, vertical controlgroup:</legend>
-                <input type="checkbox" name="checkbox-1a" id="checkbox-1a" checked  />
+                <input type="checkbox" name="checkbox-1a" id="checkbox-1a" checked>
                 <label for="checkbox-1a">Cheetos</label>
 
-                <input type="checkbox" name="checkbox-2a" id="checkbox-2a" />
+                <input type="checkbox" name="checkbox-2a" id="checkbox-2a">
                 <label for="checkbox-2a">Doritos</label>
 
-                <input type="checkbox" name="checkbox-3a" id="checkbox-3a" />
+                <input type="checkbox" name="checkbox-3a" id="checkbox-3a">
                 <label for="checkbox-3a">Fritos</label>
 
-                <input type="checkbox" name="checkbox-4a" id="checkbox-4a" />
+                <input type="checkbox" name="checkbox-4a" id="checkbox-4a">
                 <label for="checkbox-4a">Sun Chips</label>
             </fieldset>
         </div><!-- /demo-html -->
@@ -147,13 +147,13 @@
         <div data-demo-html="true">
             <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                 <legend>Checkboxes, mini, horizontal controlgroup:</legend>
-                <input type="checkbox" name="checkbox-6" id="checkbox-6" />
+                <input type="checkbox" name="checkbox-6" id="checkbox-6">
                 <label for="checkbox-6">b</label>
 
-                <input type="checkbox" name="checkbox-7" id="checkbox-7" checked />
+                <input type="checkbox" name="checkbox-7" id="checkbox-7" checked>
                 <label for="checkbox-7"><em>i</em></label>
 
-                <input type="checkbox" name="checkbox-8" id="checkbox-8" />
+                <input type="checkbox" name="checkbox-8" id="checkbox-8">
                 <label for="checkbox-8">u</label>
             </fieldset>
         </div><!-- /demo-html -->
@@ -165,16 +165,16 @@
         <div data-demo-html="true">
                 <fieldset data-role="controlgroup">
                     <legend>Radio buttons, vertical controlgroup:</legend>
-                        <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
+                        <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked">
                         <label for="radio-choice-1">Cat</label>
 
-                        <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
+                        <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
                         <label for="radio-choice-2">Dog</label>
 
-                        <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"  />
+                        <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3">
                         <label for="radio-choice-3">Hamster</label>
 
-                        <input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4"  />
+                        <input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4">
                         <label for="radio-choice-4">Lizard</label>
                 </fieldset>
         </div><!-- /demo-html -->
@@ -182,18 +182,18 @@
         <div data-demo-html="true">
                 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <legend>Radio buttons, mini, horizontal controlgroup:</legend>
-                        <input type="radio" name="radio-choice-b" id="radio-choice-c" value="list" checked="checked" />
+                        <input type="radio" name="radio-choice-b" id="radio-choice-c" value="list" checked="checked">
                         <label for="radio-choice-c">List</label>
-                        <input type="radio" name="radio-choice-b" id="radio-choice-d" value="grid" />
+                        <input type="radio" name="radio-choice-b" id="radio-choice-d" value="grid">
                         <label for="radio-choice-d">Grid</label>
-                        <input type="radio" name="radio-choice-b" id="radio-choice-e" value="gallery" />
+                        <input type="radio" name="radio-choice-b" id="radio-choice-e" value="gallery">
                         <label for="radio-choice-e">Gallery</label>
                 </fieldset>
         </div><!-- /demo-html -->
 
         <h2>Selects</h2>
 
-		<p>The select menu is used to offer a list of options in a compact picker. Ours is based on a native select element, which is hidden from view and replaced with a custom-styled select button. Tapping it opens the native menu or a custom styled version. Learn more about <a href="../selects/">selects</a>.</p>
+		<p>The select menu is used to offer a list of options in a compact picker. Ours is based on a native select element, which is hidden from view and replaced with a custom-styled select button. Tapping it opens the native menu or a custom styled version. Learn more about <a href="../selectmenu/">selects</a>.</p>
 
         <div data-demo-html="true">
             <label for="select-choice-1" class="select">Select, native menu</label>
@@ -251,7 +251,7 @@
 
         <div data-demo-html="true">
              <label for="text-basic">Text input:</label>
-             <input type="text" name="text-basic" id="text-basic" value=""  />
+             <input type="text" name="text-basic" id="text-basic" value="">
         </div><!-- /demo-html -->
 
         <div data-demo-html="true">
@@ -261,39 +261,39 @@
 
         <div data-demo-html="true">
              <label for="number-pattern">Number + [0-9]* pattern:</label>
-             <input type="number" name="number" pattern="[0-9]*" id="number-pattern" value="" />
+             <input type="number" name="number" pattern="[0-9]*" id="number-pattern" value="">
         </div><!-- /demo-html -->
 
         <div data-demo-html="true">
              <label for="date">Date:</label>
-             <input type="date" name="date" id="date" value="" />
+             <input type="date" name="date" id="date" value="">
         </div><!-- /demo-html -->
 
         <div data-demo-html="true">
              <label for="tel">Tel:</label>
-             <input type="tel" name="tel" id="tel" value="" />
+             <input type="tel" name="tel" id="tel" value="">
         </div><!-- /demo-html -->
 
         <div data-demo-html="true">
              <label for="search">Search Input:</label>
-             <input type="search" name="password" id="search" value="" placeholder="Placeholder text..." />
+             <input type="search" name="password" id="search" value="" placeholder="Placeholder text...">
         </div><!-- /demo-html -->
 
         <div data-demo-html="true">
              <label for="file">File:</label>
-             <input type="file" name="file" id="file" value="" />
+             <input type="file" name="file" id="file" value="">
         </div><!-- /demo-html -->
 
         <div data-demo-html="true">
              <label for="password">Password:</label>
-             <input type="password" name="password" id="password" value="" autocomplete="off" />
+             <input type="password" name="password" id="password" value="" autocomplete="off">
         </div><!-- /demo-html -->
 
 		<p>See the <a href="form-gallery.php">form gallery</a> for more form element examples.</p>
 
 		<h2>Accessibly hidden labels</h2>
 
-		<p>For the sake of accessibility, jQuery Mobile requires that all form elements be paired with a meaningful <code>label</code>. To hide labels in a way that leaves them visible to assistive technologies &mdash; for example, when letting an element's <code>placeholder</code> attribute serve as a label &mdash; apply the helper class <code>ui-hidden-accessible</code> to the label. View more examples of <a href="form-label-hidden.php">accessibly hidden labels</a>. In case you use a field container you can use class <code>ui-hide-label</code> on the element with <code>data-role="fieldcontain"</code> to <a href="form-hide-label.php">hide the label or legend</a>.</p>
+		<p>For the sake of accessibility, jQuery Mobile requires that all form elements be paired with a meaningful <code>label</code>. To hide labels in a way that leaves them visible to assistive technologies &mdash; for example, when letting an element's <code>placeholder</code> attribute serve as a label &mdash; apply the helper class <code>ui-hidden-accessible</code> to the label. View more examples of <a href="form-label-hidden.php">accessibly hidden labels</a>. In case you use a field container you can use class <code>ui-hide-label</code> on the element with <code>class="ui-field-contain"</code> to <a href="form-hide-label.php">hide the label or legend</a>.</p>
 
 		<div data-demo-html="true">
 			<label for="textinput-hide" class="ui-hidden-accessible">Text Input:</label>
@@ -302,10 +302,10 @@
 
 		<h2>Disabling form elements</h2>
 
-		<p>All jQuery Mobile widgets can be disabled in the markup by adding the standard <code>disabled</code> attribute to the element, just like you would with native controls. Each form widget also has standard <code>disable</code> and <code>enable</code> methods that are documented with each form widget. View more examples of <a href="form-disabled.php" >disabled form elements</a>.</p>
+		<p>All jQuery Mobile widgets can be disabled in the markup by adding the standard <code>disabled</code> attribute to the element, just like you would with native controls. To dynamically disable or enable them, each form widget also has standard <code>disable</code> and <code>enable</code> methods that are documented with each form widget. View more examples of <a href="form-disabled.php" >disabled form elements</a>.</p>
 
 		<div data-demo-html="true">
-			<div data-role="fieldcontain">
+			<div class="ui-field-contain">
 				<label for="textinput-disabled">Text Input:</label>
 				<input disabled="disabled" type="text" name="textinput-disabled" id="textinput-disabled" placeholder="Text input" value="">
 			</div>
@@ -315,17 +315,17 @@
 
 		<h2>Fieldcontainer groupings</h2>
 
-		<p>To improve the styling of labels and form elements on wider screens, wrap a <code>div</code> or <code>fieldset </code>with the <code> data-role="fieldcontain"</code> attribute around each label/form element. This framework aligns the input and associated label side-by-side, and breaks to stacked block-level elements below ~448px. The framework will also add a thin bottom border to act as a field separator. See more examples of <a href="form-fieldcontain.php">fieldcontainer groupings</a>.</p>
+		<p>To improve the styling of labels and form elements on wider screens, wrap a <code>div</code> or <code>fieldset </code>with the <code>class="ui-field-contain"</code> attribute around each label/form element. This framework aligns the input and associated label side-by-side, and breaks to stacked block-level elements below ~448px. The framework will also add a thin bottom border to act as a field separator. See more examples of <a href="form-fieldcontain.php">fieldcontainer groupings</a>.</p>
 
 		<div data-demo-html="true">
-			<div data-role="fieldcontain">
+			<div class="ui-field-contain">
 				<label for="textinput-fc">Text Input:</label>
 				<input type="text" name="textinput-fc" id="textinput-fc" placeholder="Text input" value="">
 			</div>
 		</div><!--/demo-html -->
 
 		<div data-demo-html="true">
-			<div data-role="fieldcontain">
+			<div class="ui-field-contain">
 				<label for="select-native-fc">Native select:</label>
 				<select name="select-native-fc" id="select-native-fc">
 					<option value="small">One</option>
@@ -349,21 +349,21 @@ $( ...new markup that contains widgets... ).appendTo( ".ui-page" ).trigger( "cre
 
 		<h2>Refreshing form elements</h2>
 
-		    <p>In jQuery Mobile, some enhanced form controls are simply styled (inputs), but others are custom controls (selects, sliders) built from, and kept in sync with, the native control. To programmatically update a form control with JavaScript, first manipulate the native control, then use the <code>refresh</code> method to tell the enhanced control to update itself to match the new state. Here are some examples of how to update common form controls, then call the <code>refresh</code> method:</p>
+		 <p>In jQuery Mobile, some enhanced form controls are simply styled (inputs), but others are custom controls (selects, sliders) built from, and kept in sync with, the native control. To programmatically update a form control with JavaScript, first manipulate the native control, then use the <code>refresh</code> method to tell the enhanced control to update itself to match the new state. Here are some examples of how to update common form controls, then call the <code>refresh</code> method:</p>
             
-			<h4>Checkboxes:</h4>
+		<h3>Checkboxes:</h3>
 
 <pre><code>
 $( "input[type='checkbox']" ).prop( "checked", true ).checkboxradio( "refresh" );
 </code></pre>
 
-		<h4>Radios:</h4>
+		<h3>Radios:</h3>
         
 <pre><code>
 $( "input[type='radio']" ).prop( "checked", true ).checkboxradio( "refresh" );
 </code></pre>
 
-		<h4>Selects:</h4>
+		<h3>Selects:</h3>
         
 <pre><code>
 var myselect = $( "#selectfoo" );
@@ -371,13 +371,13 @@ myselect[0].selectedIndex = 3;
 myselect.selectmenu( "refresh" );
 </code></pre>
 
-		<h4>Sliders:</h4>
+		<h3>Sliders:</h3>
         
 <pre><code>
 $( "input[type='range']" ).val( 60 ).slider( "refresh" );
 </code></pre>
 
-		<h4>Flip switches:</h4>
+		<h3>Flip switches:</h3>
         
         <p>They use the slider widget.</p>
 
@@ -408,7 +408,7 @@ $( document ).bind( "mobileinit", function() {
 });
 </code></pre>
 
-		  	<p>Alternately you can use the <code>data-enhance="false"</code> data attribute on a parent element with <code>$.mobile.ignoreContentEnabled</code> set to true. Beware though, this will incur a performance penalty for each and every element in the page that would otherwise be enhanced as jQuery Mobile must traverse the set of parents to look for those elements.</p>
+		<p>Alternately you can use the <code>data-enhance="false"</code> data attribute on a parent element with <code>$.mobile.ignoreContentEnabled</code> set to true. Beware though, this will incur a performance penalty for each and every element in the page that would otherwise be enhanced as jQuery Mobile must traverse the set of parents to look for those elements.</p>
 
 		<p>One special case is that of selects. The above sample will prevent any and all augmentation from taking place on select elements in the page if <code>select</code> is included. If you wish to retain the native performance and appearance of the menu itself and benefit from the visual augmentation of the select button by jQuery Mobile, you can set <code>$.mobile.selectmenu.prototype.options.nativeMenu</code> to true in a <code>mobileinit</code> callback as a global setting or use <code>data-native-menu="true"</code> on a case by case basis.</p>
 

@@ -14,7 +14,9 @@ asyncTest( "Form resets correctly", function() {
 				vradio: [],
 				hradio: [],
 				selectTest: widgets.selectTest.val(),
-				range: widgets.range.val()
+				range: widgets.range.val(),
+				checkboxFlipswitch: widgets.checkboxFlipswitch.prop( "checked" ),
+				selectFlipswitch: widgets.selectFlipswitch[ 0 ].selectedIndex
 			};
 
 		for ( arIdx in arrays ) {
@@ -70,9 +72,15 @@ asyncTest( "Form resets correctly", function() {
 
 		ok( label.is( "label[for='" + id + "']" ), prefix + id + "'s label is a label for it" );
 		ok( label.parent().is( ".ui-" + ctype ), prefix + id + "'s parent's label is a div with the correct class" );
-		ok( label.hasClass( "ui-icon-" + iconValue ), prefix + id + "'s icon has the right icon class" );
+		ok( label.hasClass( "ui-" + iconValue ), prefix + id + "'s icon has the right state class" );
 		ok( iconVisible === ( !isHoriz ), prefix + id + "'s icon is visible exactly when it's not part of a horizontal controlgroup" );
 		ok( label.hasClass( "ui-btn-active" ) === ( isHoriz && value ), prefix + id + "'s label has class ui-btn-active exactly when it's set and part of a horizontal controlgroup" );
+	}
+
+	function verifyFlipswitch( prefix, el, value ) {
+		var id = el.attr( "id" );
+
+		deepEqual( el.parent().hasClass( "ui-flipswitch-active" ), !!value, prefix + "class 'ui-flipswitch-active' presence/absence on parent of " + id + " is correct" );
 	}
 
 	// Verify that the enhanced widgets reflect the expected values - the helpers
@@ -94,6 +102,9 @@ asyncTest( "Form resets correctly", function() {
 
 		verifySelect( prefix, widgets.selectTest, values.selectTest );
 		verifyRange( prefix, widgets.range, values.range );
+
+		verifyFlipswitch( prefix, widgets.checkboxFlipswitch, values.checkboxFlipswitch );
+		verifyFlipswitch( prefix, widgets.selectFlipswitch, values.selectFlipswitch );
 	}
 
 	function runTest( page, doneCb ) {
@@ -117,7 +128,9 @@ asyncTest( "Form resets correctly", function() {
 					$( "#testHRadio4", page )
 				],
 				selectTest: $( "#selectTest", page ),
-				range: $( "#testRange", page )
+				range: $( "#testRange", page ),
+				checkboxFlipswitch: $( "#checkbox-based-flipswitch" ),
+				selectFlipswitch: $( "#select-based-flipswitch" )
 			},
 			checkboxKeys = [ "vcheckbox", "hcheckbox" ],
 			defaults = grabNativeValues( widgets );
@@ -139,6 +152,11 @@ asyncTest( "Form resets correctly", function() {
 		widgets.selectTest.val( "option2" ).selectmenu( "refresh" );
 		// Modify slider
 		widgets.range.val( 19 ).slider( "refresh" );
+
+		// Modify flipswitches
+		widgets.checkboxFlipswitch.prop( "checked", !widgets.checkboxFlipswitch.prop( "checked" ) ).flipswitch( "refresh" );
+		widgets.selectFlipswitch[ 0 ].selectedIndex = ( widgets.selectFlipswitch[ 0 ].selectedIndex === 0 ? 1 : 0 );
+		widgets.selectFlipswitch.flipswitch( "refresh" );
 
 		// Verify values after modification
 		verifyValues( "After modification: ", widgets, grabNativeValues( widgets ) );
