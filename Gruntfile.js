@@ -769,6 +769,7 @@ module.exports = function( grunt ) {
 					"jquery.js": "jquery/jquery.js",
 					"jquery.ui.core.js": "jquery-ui/ui/jquery.ui.core.js",
 					"jquery.ui.widget.js": "jquery-ui/ui/jquery.ui.widget.js",
+					"widgets/jquery.ui.tabs.js": "jquery-ui/ui/jquery.ui.tabs.js",
 					"jquery.hashchange.js": "jquery-hashchange/jquery.ba-hashchange.js"
 				}
 			}
