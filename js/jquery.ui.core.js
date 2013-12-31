@@ -1,5 +1,5 @@
 /*!
- * jQuery UI Core c0ab71056b936627e8a7821f03c044aec6280a40
+ * jQuery UI Core @VERSION
  * http://jqueryui.com
  *
  * Copyright 2013 jQuery Foundation and other contributors
@@ -17,7 +17,7 @@ var uuid = 0,
 $.ui = $.ui || {};
 
 $.extend( $.ui, {
-	version: "c0ab71056b936627e8a7821f03c044aec6280a40",
+	version: "@VERSION",
 
 	keyCode: {
 		BACKSPACE: 8,

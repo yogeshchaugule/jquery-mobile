@@ -736,6 +736,44 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		bowercopy: {
+			options: {
+				// Bower components folder will be removed afterwards
+				clean: true
+			},
+			tests: {
+				options: {
+					destPrefix: "external"
+				},
+				files: {
+					"qunit.js": "qunit/qunit/qunit.js",
+					"qunit.css": "qunit/qunit/qunit.css",
+					"jshint/jshint.js": "jshint/dist/jshint.js"
+				}
+			},
+			requirejs: {
+				options: {
+					destPrefix: "external"
+				},
+				files: {
+					"requirejs/require.js": "requirejs/require.js",
+					"requirejs/plugins/text.js": "requirejs-text/text.js",
+					"requirejs/plugins/json.js": "requirejs-plugins/src/json.js"
+				}
+			},
+			runtime: {
+				options: {
+					destPrefix: "js"
+				},
+				files: {
+					"jquery.js": "jquery/jquery.js",
+					"jquery.ui.core.js": "jquery-ui/ui/jquery.ui.core.js",
+					"jquery.ui.widget.js": "jquery-ui/ui/jquery.ui.widget.js",
+					"jquery.hashchange.js": "jquery-hashchange/jquery.ba-hashchange.js"
+				}
+			}
+		},
+
 		clean: {
 			dist: [ dist ],
             git: [ path.join( dist, "git" ) ],
@@ -746,6 +784,7 @@ module.exports = function( grunt ) {
 	});
 
 	// grunt plugins
+	grunt.loadNpmTasks( "grunt-bowercopy" );
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
 	grunt.loadNpmTasks( "grunt-contrib-clean" );
 	grunt.loadNpmTasks( "grunt-contrib-copy" );
@@ -806,6 +845,8 @@ module.exports = function( grunt ) {
 	]);
 	grunt.registerTask( "dist:release", [ "release:init", "dist", "cdn" ] );
 	grunt.registerTask( "dist:git", [ "dist", "clean:git", "config:copy:git:-git", "copy:git" ] );
+
+	grunt.registerTask( "updateDependencies", [ "bowercopy" ] );
 
 	grunt.registerTask( "test", [ "jshint", "config:fetchHeadHash", "js:release", "connect", "qunit:http" ] );
 	grunt.registerTask( "test:ci", [ "qunit_junit", "connect", "qunit:http" ] );
