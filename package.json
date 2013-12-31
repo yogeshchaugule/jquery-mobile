@@ -47,7 +47,7 @@
 		"semver": "2.2.1",
 		"cheerio": "0.12.4",
 		"underscore": "1.5.2",
-		"grunt-bowercopy": "git://github.com/timmywil/grunt-bowercopy.git#c30bcf081b01d6eea4e438c334016378f563ea72"
+		"grunt-bowercopy": "0.5.0"
 	},
 	"main": "Gruntfile.js",
 	"engines": {
