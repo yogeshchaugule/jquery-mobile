@@ -787,6 +787,23 @@ module.exports = function( grunt ) {
 					"jquery.ui.widget.js": "jquery-ui/ui/jquery.ui.widget.js"
 				}
 			},
+			"jquery-ui-tabs": {
+				options: {
+					destPrefix: "js",
+					copyOptions: {
+						process: function( content ) {
+							var version = grunt.file.readJSON( "bower.json" ).dependencies[ "jquery-ui-tabs" ];
+							if ( /#/.test( version ) ) {
+								version = version.split( "#" )[1];
+							}
+							return content.replace(/@VERSION/g, version);
+						}
+					}
+				},
+				files: {
+					"widgets/jquery.ui.tabs.js": "jquery-ui-tabs/ui/jquery.ui.tabs.js"
+				}
+			},
 			"jquery-plugins": {
 				options: {
 					destPrefix: "js"

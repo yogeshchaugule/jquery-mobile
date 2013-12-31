@@ -16,6 +16,7 @@
 	"dependencies": {
 		"jquery": "1.10.2",
 		"jquery-ui": "jquery/jquery-ui#c0ab71056b936627e8a7821f03c044aec6280a40",
+		"jquery-ui-tabs": "jquery/jquery-ui#fadf2b312a05040436451c64bbfaf4814bc62c56",
 		"jquery-hashchange": "gseguin/jquery-hashchange#77c4b3551fc6bdc2ac6b22b2641cfd7ac6b212d2"
 	},
 	"devDependencies": {
