@@ -761,15 +761,37 @@ module.exports = function( grunt ) {
 					"requirejs/plugins/json.js": "requirejs-plugins/src/json.js"
 				}
 			},
-			runtime: {
+			jquery: {
 				options: {
 					destPrefix: "js"
 				},
 				files: {
-					"jquery.js": "jquery/jquery.js",
+					"jquery.js": "jquery/jquery.js"
+				}
+			},
+			"jquery-ui": {
+				options: {
+					destPrefix: "js",
+					copyOptions: {
+						process: function( content ) {
+							var version = grunt.file.readJSON( "bower.json" ).dependencies[ "jquery-ui" ];
+							if ( /#/.test( version ) ) {
+								version = version.split( "#" )[1];
+							}
+							return content.replace(/@VERSION/g, version);
+						}
+					}
+				},
+				files: {
 					"jquery.ui.core.js": "jquery-ui/ui/jquery.ui.core.js",
-					"jquery.ui.widget.js": "jquery-ui/ui/jquery.ui.widget.js",
-					"widgets/jquery.ui.tabs.js": "jquery-ui/ui/jquery.ui.tabs.js",
+					"jquery.ui.widget.js": "jquery-ui/ui/jquery.ui.widget.js"
+				}
+			},
+			"jquery-plugins": {
+				options: {
+					destPrefix: "js"
+				},
+				files: {
 					"jquery.hashchange.js": "jquery-hashchange/jquery.ba-hashchange.js"
 				}
 			}
