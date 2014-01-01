@@ -32,13 +32,17 @@ module.exports = function ( config ) {
 
 		// test results reporter to use
 		// possible values: "dots", "progress", "junit", "growl", "coverage"
-		reporters: ["progress", "coverage"],
+		reporters: [ "progress", "coverage" ],
 
-		preprocessors: { "js/**/*.js": ["coverage"] },
+		preprocessors: { "js/**/*.js": [ "coverage" ] },
+
+		coverageReporter: {
+			type: "lcov",
+			dir: "coverage/"
+		},
 
 		// web server port
 		port: 9876,
-
 
 		// enable / disable colors in the output (reporters and logs)
 		colors: true,

@@ -716,6 +716,13 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		coveralls: {
+			options: {
+				debug: true,
+				coverage_dir: 'coverage'
+			}
+		},
+
 		clean: {
 			dist: [ dist ],
             git: [ path.join( dist, "git" ) ],
@@ -739,6 +746,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-git-authors" );
 	grunt.loadNpmTasks( "grunt-qunit-junit" );
 	grunt.loadNpmTasks( "grunt-hash-manifest" );
+	grunt.loadNpmTasks( "grunt-karma-coveralls" );
 
 	// load the project's default tasks
 	grunt.loadTasks( "build/tasks");

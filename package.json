@@ -48,14 +48,15 @@
 		"underscore": "1.5.2",
 		"karma": "0.10.9",
 		"karma-qunit": "0.1.1",
-		"karma-coverage": "0.1.4"
+		"karma-coverage": "0.1.4",
+		"grunt-karma-coveralls": "2.2.0"
 	},
 	"main": "Gruntfile.js",
 	"engines": {
 		"node": ">= 0.8.0"
 	},
 	"scripts": {
-		"test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
+		"test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS && grunt coveralls",
 		"lint": "grunt jshint"
 	},
 	"keywords": []
