@@ -1,8 +1,25 @@
 /*
  * mobile button unit tests
  */
-(function($){
+requirejs.config({
+	config: {
+		"step": {
+			steps: [
+				[ "css!styles/themes/default/jquery.mobile.css" ],
+				[ "tests/util/jquery.setNameSpace", "tests/util/jquery.testHelper" ],
+				[ "widgets/page" ],
+				[ "widgets/forms/button", "jquery.mobile.buttonMarkup" ],
+				[ "tests/unit/button/fixture" ],
+				[ "jquery.mobile.init" ]
+			]
+		}
+	}
+})
+
+define([ "jquery", "step!jquery.mobile.init" ], function( $ ) {
 	$.mobile.page.prototype.options.keepNative = "button.should-be-native";
+
+	module( "widgets.button" );
 
 	test( "button elements in the keepNative set shouldn't be enhanced", function() {
 		deepEqual( $("button.should-be-native").siblings("div.ui-slider").length, 0 );
@@ -31,7 +48,7 @@
 
 	test( "theme should be inherited", function() {
 		var $inherited = $( "#theme-check" ),
-		    $explicit = $( "#theme-check-explicit" );
+			$explicit = $( "#theme-check-explicit" );
 
 		deepEqual( $inherited.css( "background-color" ), "rgb(51, 51, 51)" ); /* The RGB value should match the background color we set for ui-btn-b in the default theme */
 		ok( $explicit.hasClass( "ui-btn-a" ), "should not inherit" );
@@ -39,9 +56,8 @@
 
 	test( "Enhanced button elements should allow for phrasing content.", function() {
 		var $htmlstring = $( "#contains-html" ),
-		    $htmlval = $( "#val-contains-html" );
+			$htmlval = $( "#val-contains-html" );
 
 		ok( $htmlstring.find("sup").length, "HTML contained within a button element should carry over to the enhanced version" );
 	});
-
-})( jQuery );
+});
