@@ -65,7 +65,7 @@ module.exports = function ( config ) {
 		// - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
 		// - PhantomJS
 		// - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-		browsers: ["ChromeCanary"],
+		browsers: ["PhantomJS"],
 
 
 		// If browser does not capture in given timeout [ms], kill it
@@ -74,12 +74,6 @@ module.exports = function ( config ) {
 
 		// Continuous Integration mode
 		// if true, it capture browsers, run tests and exit
-		singleRun: false,
-
-		plugins: [
-			'karma-requirejs',
-			'karma-qunit',
-			'karma-chrome-launcher'
-		]
+		singleRun: false
 	});
 };
