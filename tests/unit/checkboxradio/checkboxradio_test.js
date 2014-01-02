@@ -1,8 +1,51 @@
 /*
  * mobile checkboxradio unit tests
  */
-(function($){
-	module( 'jquery.mobile.forms.checkboxradio.js' );
+define([
+	"jquery",
+], function( $ ) {
+
+	module( "widgets.forms.checkboxradio" );
+
+	QUnit.moduleStart(function( options ) {
+		if ( options.name !== "widgets.forms.checkboxradio" ) { return; }
+
+		QUnit.stop();
+
+		requirejs.undef( "step" );
+		requirejs.undef( "jquery.mobile.init" );
+		requirejs.undef( "step!jquery.mobile.init" );
+
+		requirejs.config({
+			config: {
+				"step": {
+					steps: [
+						[ "css!styles/themes/default/jquery.mobile.css" ],
+						[ "tests/util/jquery.setNameSpace", "tests/util/jquery.testHelper" ],
+						[ "widgets/page" ],
+						[ "widgets/controlgroup" ],
+						[
+							"widgets/forms/checkboxradio",
+//							"widgets/page" // Needed by the test suite
+						],
+						[ "tests/unit/checkboxradio/fixture" ],
+						[ "jquery.mobile.init" ]
+					]
+				}
+			}
+		});
+
+		QUnit.moduleDone(function() {
+			if ( options.name !== "widgets.forms.checkboxradio" ) { return; }
+			$.mobile.loading._widget = null;
+			QUnit.config.moduleStart.shift();
+			QUnit.config.moduleDone.shift();
+		});
+
+		require([ "step!jquery.mobile.init" ], function() {
+			QUnit.start();
+		});
+	});
 
 	test( "widget with weird label is created successfully", function() {
 		var elem = $( "#chk\\[\\'3\\'\\]-1" );
@@ -76,8 +119,6 @@
 		ok( !$("#enhancetest").appendTo(".ui-page-active").find(".ui-checkbox").length, "did not have enhancements applied" );
 		ok( $("#enhancetest").trigger("create").find(".ui-checkbox").length, "enhancements applied" );
 	});
-
-	$.mobile.page.prototype.options.keepNative = "input.should-be-native";
 
 	// not testing the positive case here since's it's obviously tested elsewhere
 	test( "checkboxradio elements in the keepNative set shouldn't be enhanced", function() {
@@ -189,4 +230,4 @@
 		deepEqual( v.prev().hasClass( "ui-checkbox-on" ), false, "Vertical: After unchecking and refreshing, the label does not have the ui-checkbox-on class" );
 		deepEqual( v.prev().hasClass( "ui-checkbox-off" ), true, "Vertical: After unchecking and refreshing, the label has the ui-checkbox-off class" );
 	});
-})(jQuery);
+});
