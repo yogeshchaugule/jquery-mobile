@@ -1,25 +1,49 @@
 /*
  * mobile button unit tests
  */
-requirejs.config({
-	config: {
-		"step": {
-			steps: [
-				[ "css!styles/themes/default/jquery.mobile.css" ],
-				[ "tests/util/jquery.setNameSpace", "tests/util/jquery.testHelper" ],
-				[ "widgets/page" ],
-				[ "widgets/forms/button", "jquery.mobile.buttonMarkup" ],
-				[ "tests/unit/button/fixture" ],
-				[ "jquery.mobile.init" ]
-			]
-		}
-	}
-})
 
-define([ "jquery", "step!jquery.mobile.init" ], function( $ ) {
-	$.mobile.page.prototype.options.keepNative = "button.should-be-native";
-
+define([
+	"jquery"
+], function( $ ) {
 	module( "widgets.button" );
+
+	QUnit.moduleStart(function( options ) {
+		if ( options.name !== "widgets.button" ) { return; }
+		QUnit.stop();
+
+		requirejs.undef( "step" );
+		requirejs.undef( "jquery.mobile.init" );
+		requirejs.undef( "step!jquery.mobile.init" );
+
+		requirejs.config({
+			config: {
+				"step": {
+					steps: [
+						[ "css!styles/themes/default/jquery.mobile.css" ],
+						[ "tests/util/jquery.setNameSpace", "tests/util/jquery.testHelper" ],
+						[ "widgets/page" ],
+						[ "jquery.mobile.buttonMarkup" ],
+						[ "widgets/forms/button" ],
+						[ "tests/unit/button/fixture" ],
+						[ "jquery.mobile.init" ]
+					]
+				}
+			}
+		});
+
+		QUnit.moduleDone(function() {
+			if ( options.name !== "widgets.button" ) { return; }
+			$.mobile.loading._widget = null;
+			QUnit.config.moduleStart.shift();
+			QUnit.config.moduleDone.shift();
+		});
+
+		require([
+			"step!jquery.mobile.init"
+		], function() {
+			QUnit.start();
+		});
+	});
 
 	test( "button elements in the keepNative set shouldn't be enhanced", function() {
 		deepEqual( $("button.should-be-native").siblings("div.ui-slider").length, 0 );
