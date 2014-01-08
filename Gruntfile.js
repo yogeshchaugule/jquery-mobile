@@ -738,6 +738,7 @@ module.exports = function( grunt ) {
 
 		bowercopy: {
 			options: {
+
 				// Bower components folder will be removed afterwards
 				clean: true
 			},
@@ -794,9 +795,9 @@ module.exports = function( grunt ) {
 						process: function( content ) {
 							var version = grunt.file.readJSON( "bower.json" ).dependencies[ "jquery-ui-tabs" ];
 							if ( /#/.test( version ) ) {
-								version = version.split( "#" )[1];
+								version = version.split( "#" )[ 1 ];
 							}
-							return content.replace(/@VERSION/g, version);
+							return content.replace( /@VERSION/g, version );
 						}
 					}
 				},
